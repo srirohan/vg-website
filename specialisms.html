@@ -10,7 +10,7 @@
 /* ─── SPECIALISM HERO ─── */
 .page-hero {
   padding: 160px 2rem 100px;
-  background: radial-gradient(circle at top right, #122023 0%, #050C0D 100%);
+  background: radial-gradient(circle at top right, #F4F0E8 0%, #F9F7F2 100%);
   border-bottom: 1px solid var(--border);
   position:relative; overflow:hidden;
   text-align: center;
@@ -33,10 +33,10 @@
   margin-top:4rem; border-top:1px solid var(--border); padding-top:2rem;
 }
 .spec-quick { 
-  padding:2rem 1rem; border:1px solid var(--border); background:rgba(255,255,255,0.02);
+  padding:2rem 1rem; border:1px solid var(--border); background:var(--bg-3);
   text-align:center; cursor:pointer; transition:all 0.3s; text-decoration:none; display:block;
 }
-.spec-quick:hover { background:rgba(201,160,90,0.1); border-color:var(--gold); transform:translateY(-5px); }
+.spec-quick:hover { background:var(--surface); border-color:var(--gold); transform:translateY(-5px); box-shadow:var(--shadow-lg); }
 .sq-icon { font-size:2rem; margin-bottom:1rem; display:block; }
 .sq-num { font-family:'Inter',sans-serif; font-size:0.6rem; color:var(--gold); letter-spacing:0.15em; margin-bottom:0.5rem; text-transform:uppercase; font-weight:600; }
 .sq-title { font-size:0.85rem; font-weight:500; color:var(--sand); line-height:1.3; }
@@ -54,20 +54,20 @@
   color:var(--gold); margin-bottom:2.5rem; font-weight:600;
 }
 
-.mini-stat { padding:2.5rem; background:#0D1A1C; border:1px solid var(--border); text-align:center; margin-bottom:1rem; }
+.mini-stat { padding:2.5rem; background:var(--bg-3); border:1px solid var(--border); text-align:center; margin-bottom:1rem; }
 .mini-stat-num { font-family:'Cormorant Garamond',serif; font-size:3.5rem; font-weight:300; line-height:1; color:var(--gold); margin-bottom:0.5rem; }
 .mini-stat-label { font-size:0.75rem; color:var(--sand-muted); letter-spacing:0.1em; line-height:1.5; text-transform:uppercase; }
 
-.cap-box { padding:2.5rem; background:#122023; border:1px solid var(--border); border-top:3px solid var(--gold); }
+.cap-box { padding:2.5rem; background:var(--bg-3); border:1px solid var(--border); border-top:3px solid var(--gold); }
 .cap-box-title { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:1.4rem; color:var(--sand); margin-bottom:1rem; }
 .cap-box-text { font-size:0.9rem; color:var(--sand-muted); line-height:1.75; }
 
 .steps-row { display:grid; grid-template-columns:repeat(5,1fr); gap:1rem; margin-top:4rem; }
-.step-box { padding:2.5rem 1.8rem; background:#122023; border:1px solid var(--border); }
-.step-circle { width:45px;height:45px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;margin-bottom:1.5rem; background:rgba(201,160,90,0.15); color:var(--gold); box-shadow: 0 0 15px rgba(201,160,90,0.3); }
+.step-box { padding:2.5rem 1.8rem; background:var(--bg-3); border:1px solid var(--border); }
+.step-circle { width:45px;height:45px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;margin-bottom:1.5rem; background:rgba(184,142,69,0.1); color:var(--gold); box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
 
-.roi-tbl { width:100%; border-collapse:collapse; margin-top:3rem; background:#0D1A1C; border:1px solid var(--border); }
-.roi-tbl th { padding:1.5rem; font-family:'Inter',sans-serif; font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; background:rgba(255,255,255,0.03); color:var(--gold); text-align:left; border-bottom:1px solid var(--border); }
+.roi-tbl { width:100%; border-collapse:collapse; margin-top:3rem; background:var(--bg-3); border:1px solid var(--border); }
+.roi-tbl th { padding:1.5rem; font-family:'Inter',sans-serif; font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; background:rgba(26,26,26,0.02); color:var(--gold); text-align:left; border-bottom:1px solid var(--border); }
 .roi-tbl td { padding:1.2rem 1.5rem; font-size:0.95rem; color:var(--sand-muted); border-bottom:1px solid var(--border); }
 .roi-tbl td:last-child { font-weight:600; color:var(--gold); }
 .roi-tbl tr:last-child td { border-bottom:none; }

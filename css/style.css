@@ -1,41 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* ── Dark backgrounds (deep slate-charcoal) ── */
-  --bg:         #050C0D;   /* Cinematic black-teal */
-  --bg-2:       #0A1618;   /* Section backgrounds */
-  --bg-3:       #0F2427;   /* Elevated cards */
-  --surface:    #142E32;   /* Hover states */
+  /* ── Warm Alabaster & Sandstone (Light Theme) ── */
+  --bg:         #F9F7F2;   /* Main Alabaster */
+  --bg-2:       #F4F0E8;   /* Section Sandstone */
+  --bg-3:       #FFFFFF;   /* Elevated White Cards */
+  --surface:    #E8E2D8;   /* Hover states */
 
-  /* ── Text (Soft sand & cream) ── */
-  --sand:       #E8DCC8;   /* Main text */
-  --sand-muted: #A89F8C;   /* Secondary */
-  --sand-faint: #565B5C;   /* Tertiary */
+  /* ── Text (Deep Slate & Charcoal) ── */
+  --sand:       #1A1A1A;   /* Main text (Now Slate) */
+  --sand-muted: #555555;   /* Secondary */
+  --sand-faint: #888888;   /* Tertiary */
 
-  /* ── Luxury Gold Palette (Metallic Gradients) ── */
-  --gold-raw:   #C9A05A;
+  /* ── Luxury Gold Palette (Refined for Light Mode) ── */
+  --gold-raw:   #B88E45;   /* Slightly deeper gold for contrast */
   --gold-bright:#F6E27A;
-  --gold-deep:  #8B6F39;
+  --gold-deep:  #7A5F32;
   
-  /* Rich Gold Linear Gradient exactly like the screenshot but more shimmer */
+  /* Rich Gold Linear Gradient - Shimmer adjusted for Light backgrounds */
   --gold-metallic: linear-gradient(
     135deg, 
-    #8B6F39 0%, 
-    #C9A05A 25%, 
-    #F6E27A 50%, 
-    #C9A05A 75%, 
-    #8B6F39 100%
+    #7A5F32 0%, 
+    #B88E45 25%, 
+    #8B6F39 50%, 
+    #B88E45 75%, 
+    #7A5F32 100%
   );
   
-  --gold:       #C9A05A;
-  --gold-light: #F6E27A;
+  --gold:       #B88E45;
+  --gold-light: #C9A05A;
 
   /* ── Accents ── */
-  --teal-glow:  #4E9E96;
-  --border:     rgba(201, 160, 90, 0.1); /* Ultra-thin gold border */
-  --shadow-gold: 0 0 20px rgba(201, 160, 90, 0.12);
-  --shadow-lg:  0 30px 100px rgba(0, 0, 0, 0.6);
-  --radius:     2px; /* Sharper, more architectural corners */
+  --teal-glow:  #2D605C;   /* Deeper teal for contrast */
+  --border:     rgba(26, 26, 26, 0.08); 
+  --shadow-gold: 0 4px 20px rgba(184, 142, 69, 0.08);
+  --shadow-lg:  0 20px 80px rgba(0, 0, 0, 0.05); /* Soft, airy elevation */
+  --radius:     2px; 
   --radius-lg:  4px;
 }
 
@@ -85,9 +85,9 @@ nav {
   justify-content: space-between;
   padding: 0 4rem;
   height: 72px;
-  background: rgba(5, 12, 13, 0.85); /* Deep slate glass */
+  background: rgba(249, 247, 242, 0.88); /* Warm frosted glass */
   backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(201, 160, 90, 0.15); /* Thin gold line */
+  border-bottom: 1px solid rgba(26, 26, 26, 0.06); 
   transition: all 0.4s ease;
 }
 
@@ -1018,7 +1018,7 @@ nav {
 }
 
 .btn-outline:hover {
-  background: rgba(201, 160, 90, 0.1);
+  background: rgba(184, 142, 69, 0.08); /* Light gold tint */
   border-color: var(--gold-light);
   color: var(--gold-light);
 }
@@ -1052,11 +1052,11 @@ nav {
 }
 
 .section-alt {
-  background: #122023;
+  background: var(--bg-2);
 }
 
 .section-dark {
-  background: #182C2F;
+  background: var(--surface); /* A slightly darker warm tone than bg-2 */
 }
 
 .section-tag {
@@ -1133,7 +1133,7 @@ h3.sub-title em {
 
 /* ─── TRUST BAR ─── */
 .trust-bar {
-  background: #182C2F;
+  background: var(--bg-2);
   padding: 1.1rem 5rem;
   display: flex;
   align-items: center;
@@ -1451,11 +1451,12 @@ h3.sub-title em {
 
 /* ─── CTA SECTION ─── */
 .cta-band {
-  background: linear-gradient(135deg, #182C2F, #0f2730);
+  background: var(--bg-2);
   padding: 6rem 5rem;
   text-align: center;
   position: relative;
   overflow: hidden;
+  border-top: 1px solid var(--border);
 }
 
 .cta-band::before {
@@ -1486,12 +1487,12 @@ h3.sub-title em {
   margin: 0 auto 2.5rem;
   font-size: 1rem;
   line-height: 1.75;
-  font-weight: 300;
+  font-weight: 400; /* Increased from 300 for visibility */
 }
 
 /* ─── FOOTER ─── */
 footer {
-  background: #0D1A1C;
+  background: var(--bg-2);
   padding: 4rem 5rem 2rem;
   border-top: 1px solid var(--border);
 }
@@ -1516,7 +1517,7 @@ footer {
 .footer-tag {
   font-family: 'Inter', sans-serif;
   font-size: 0.65rem;
-  color: var(--sand-faint);
+  color: var(--sand-muted);
   letter-spacing: 0.08em;
   margin-bottom: 1.2rem;
 }
@@ -1525,7 +1526,7 @@ footer {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: 0.88rem;
-  color: var(--sand-muted);
+  color: var(--gold);
   line-height: 1.7;
   margin-bottom: 1.5rem;
 }
@@ -1533,10 +1534,11 @@ footer {
 .footer-col-title {
   font-family: 'Inter', sans-serif;
   font-size: 0.56rem;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.2rem;
   text-transform: uppercase;
-  color: var(--sand-faint);
-  margin-bottom: 1rem;
+  color: var(--sand);
+  margin-bottom: 1.2rem;
+  font-weight: 700;
 }
 
 .footer-link {
@@ -1564,7 +1566,7 @@ footer {
 .footer-legal {
   font-family: 'Inter', sans-serif;
   font-size: 0.66rem;
-  color: var(--sand-faint);
+  color: var(--sand-muted);
 }
 
 .footer-creds {
@@ -1576,7 +1578,7 @@ footer {
 .cred {
   font-family: 'Inter', sans-serif;
   font-size: 0.56rem;
-  color: var(--sand-faint);
+  color: var(--sand-muted);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
