@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Insights — VG International SG Pte Ltd</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<style>
+/* ─── INSIGHTS HERO ─── */
+.page-hero {
+  padding: 160px 2rem 100px;
+  background: radial-gradient(circle at top right, #122023 0%, #050C0D 100%);
+  border-bottom: 1px solid var(--border);
+  position:relative; overflow:hidden;
+  text-align: center;
+}
+.page-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 6vw, 5.2rem);
+  font-weight: 400; line-height: 1.1; letter-spacing: -0.02em;
+  margin: 1.5rem auto; color: var(--sand);
+  max-width: 1200px;
+}
+.page-hero p {
+  max-width: 800px; margin: 0 auto;
+  color: var(--sand-muted); font-size: 1.15rem; line-height: 1.7;
+}
+
+/* ─── INSIGHTS GRID ─── */
+.insights-grid { display:grid; grid-template-columns:2.2fr 1fr; gap:4rem; }
+
+.article-card { 
+  background:#0D1A1C; border:1px solid var(--border); 
+  display:grid; grid-template-columns:200px 1fr; overflow:hidden; 
+  transition:all 0.4s; margin-bottom:2rem;
+}
+.article-card:hover { border-color:var(--gold); transform:translateX(5px); box-shadow:var(--shadow-gold); }
+
+.article-thumb { 
+  display:flex; align-items:center; justify-content:center; 
+  font-size:3.5rem; background:#122023; border-right:1px solid var(--border);
+}
+.article-body { padding:2.5rem; }
+.article-meta { display:flex; gap:1.2rem; align-items:center; margin-bottom:1rem; }
+.article-tag { 
+  font-family:'Inter',sans-serif; font-size:0.6rem; font-weight:700;
+  letter-spacing:0.15em; text-transform:uppercase; padding:0.35rem 1rem; 
+  border:1px solid var(--gold); color:var(--gold);
+}
+.article-date { 
+  font-family:'Inter',sans-serif; font-size:0.65rem; color:var(--sand-muted); 
+  letter-spacing:0.1em; text-transform:uppercase;
+}
+
+.article-title { 
+  font-family:'Cormorant Garamond',serif; font-size:1.8rem; 
+  font-weight:500; color:var(--sand); margin-bottom:1rem; line-height:1.2;
+}
+.article-excerpt { font-size:0.95rem; color:var(--sand-muted); line-height:1.75; margin-bottom:1.5rem; }
+.article-read-more { 
+  font-size:0.7rem; font-weight:700; letter-spacing:0.15em; 
+  text-transform:uppercase; color:var(--gold); cursor:pointer;
+}
+
+/* ─── SIDEBAR ─── */
+.sidebar-block { 
+  border:1px solid var(--border); padding:2.5rem; 
+  background:#0D1A1C; margin-bottom:2.5rem; 
+}
+.sidebar-title { 
+  font-family:'Cormorant Garamond',serif; font-size:1.5rem; 
+  font-weight:500; color:var(--sand); margin-bottom:1.8rem; 
+  padding-bottom:1rem; border-bottom:1px solid var(--gold); 
+}
+
+.whitepaper-item { 
+  display:flex; gap:1.2rem; padding:1.2rem 0; 
+  border-bottom:1px solid rgba(255,255,255,0.06); 
+}
+.wp-icon { font-size:2rem; }
+.wp-title { font-family:'Cormorant Garamond',serif; font-size:1.15rem; color:var(--sand); margin-bottom:0.4rem; }
+.wp-meta { font-size:0.65rem; color:var(--sand-muted); letter-spacing:0.08em; text-transform:uppercase; }
+
+.topic-pill { 
+  font-size:0.65rem; padding:0.4rem 1rem; border:1px solid var(--border); 
+  color:var(--sand-muted); cursor:pointer; transition:all 0.3s; margin:0.2rem; display:inline-block;
+}
+.topic-pill:hover { background:var(--gold); color:#050C0D; border-color:var(--gold); }
+
+/* ─── SEO GRIDS ─── */
+.keyword-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; margin-top:4rem; }
+.kw-cat { 
+  font-family:'Cormorant Garamond',serif; font-size:1.4rem; 
+  color:var(--gold); margin-bottom:1.2rem; padding-bottom:0.8rem; 
+  border-bottom:1px solid var(--border);
+}
+.kw-item { 
+  font-size:0.8rem; color:var(--sand-muted); padding:0.6rem 0; 
+  border-bottom:1px solid rgba(255,255,255,0.03); 
+}
+
+@media(max-width:900px){
+  .insights-grid{grid-template-columns:1fr;}
+  .article-card{grid-template-columns:1fr;}
+  .article-thumb{height:180px; border-right:none; border-bottom:1px solid var(--border);}
+  .page-hero { padding:120px 1.5rem 60px; }
+  .keyword-grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<div class="page-hero">
+  <div class="page-hero-tag">Insights · Articles · World-Class Authority</div>
+  <h1 class="gold-shimmer-text">Global Authority in<br><em>Specialist Building Engineering</em></h1>
+  <p>Technical strategy, regulation trackers, and ROI calculators. We share the thinking that positions VG as the reference for high-performance consultancy.</p>
+</div>
+
+<section class="section">
+  <div class="insights-grid">
+    <div class="article-grid">
+      <!-- Article 01 -->
+      <div class="article-card">
+        <div class="article-thumb">🌡️</div>
+        <div class="article-body">
+          <div class="article-meta"><span class="article-tag">Net Zero</span><span class="article-date">March 2025</span></div>
+          <div class="article-title">Designing Net Zero Data Centers in Hot Climates</div>
+          <div class="article-excerpt">Integrated architectural shading, adiabatic pre-cooling and liquid-cooled rack systems for PUE < 1.3 in tropical environments.</div>
+          <div class="article-read-more">Read Full Analysis →</div>
+        </div>
+      </div>
+      <!-- Article 02 -->
+      <div class="article-card">
+        <div class="article-thumb">⚡</div>
+        <div class="article-body">
+          <div class="article-meta"><span class="article-tag">Mission Critical</span><span class="article-date">February 2025</span></div>
+          <div class="article-title">Tier IV Commissioning in 18 Months: A Case Study</div>
+          <div class="article-excerpt">How VG's integrated delivery model compressed a hyperscale Tier IV project from architecture brief to IST completion.</div>
+          <div class="article-read-more">Read Full Analysis →</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="sidebar-block">
+        <div class="sidebar-title">📘 Whitepaper Library</div>
+        <div class="whitepaper-item">
+          <div class="wp-icon">📘</div>
+          <div><div class="wp-title">Net Zero Buildings Asia 2025</div><div class="wp-meta">32 Pages · Authority Report</div></div>
+        </div>
+        <div class="whitepaper-item">
+          <div class="wp-icon">📗</div>
+          <div><div class="wp-title">Data Center Engineering Guide</div><div class="wp-meta">24 Pages · Technical Standards</div></div>
+        </div>
+        <div style="margin-top:2rem;"><a href="contact.html" class="btn btn-gold" style="width:100%; text-align:center;">Request Access</a></div>
+      </div>
+
+      <div class="sidebar-block">
+        <div class="sidebar-title">📬 Authority Newsletter</div>
+        <p style="font-size:0.9rem; color:var(--sand-muted); line-height:1.7; margin-bottom:1.5rem;">The latest in global regulation, decarbonisation, and mission-critical engineering.</p>
+        <div style="display:flex; flex-direction:column; gap:1rem;">
+          <input type="email" placeholder="Professional Email" style="padding:1rem; background:rgba(255,255,255,0.03); border:1px solid var(--border); color:white; outline:none;">
+          <button class="btn btn-gold">Join 12,000+ Leaders</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#0A1618; border-top:1px solid var(--border);">
+  <div class="section-tag">Strategic Content Plan</div>
+  <h2 class="section-title gold-shimmer-text">Global Authority<br><em>Keyword Strategy</em></h2>
+  <div class="keyword-grid">
+    <div><div class="kw-cat">Architecture</div><div class="kw-item">Net Zero Architecture firm Singapore</div><div class="kw-item">Sustainable building design Asia</div></div>
+    <div><div class="kw-cat">Mission Critical</div><div class="kw-item">Data Center MEPF Singapore</div><div class="kw-item">Tier IV design engineer UAE</div></div>
+    <div><div class="kw-cat">Cold Chain</div><div class="kw-item">Refrigeration consultant GCC</div><div class="kw-item">Ammonia cascade design Europe</div></div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="js/shared.js"></script>
+</body>
+</html>

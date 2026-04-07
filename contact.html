@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Contact — VG International SG Pte Ltd</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<style>
+/* ─── CONTACT HERO ─── */
+.page-hero {
+  padding: 160px 2rem 100px;
+  background: radial-gradient(circle at top right, #122023 0%, #050C0D 100%);
+  border-bottom: 1px solid var(--border);
+  position:relative; overflow:hidden;
+  text-align: center;
+}
+.page-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 6vw, 5.2rem);
+  font-weight: 400; line-height: 1.1; letter-spacing: -0.02em;
+  margin: 1.5rem auto; color: var(--sand);
+  max-width: 1200px;
+}
+.page-hero p {
+  max-width: 800px; margin: 0 auto;
+  color: var(--sand-muted); font-size: 1.15rem; line-height: 1.7;
+}
+
+/* ─── CONTACT GRID & FORM ─── */
+.contact-grid { display:grid; grid-template-columns:1.2fr 1fr; gap:5rem; margin-top:5rem; }
+
+.form-group { margin-bottom:2rem; }
+.form-label { 
+  display:block; font-family:'Inter',sans-serif; font-size:0.65rem; 
+  font-weight:700; letter-spacing:0.15em; text-transform:uppercase; 
+  color:var(--gold); margin-bottom:0.8rem; 
+}
+.form-input, .form-select, .form-textarea {
+  width:100%; padding:1.2rem; border:1px solid var(--border);
+  font-family:'Inter',sans-serif; font-size:0.95rem; color:var(--sand);
+  background:rgba(255,255,255,0.03); outline:none; transition:all 0.3s;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus { 
+  border-color:var(--gold); background:rgba(255,255,255,0.06); 
+  box-shadow: 0 0 15px rgba(201,160,90,0.2);
+}
+.form-textarea { min-height:180px; }
+
+.info-block { 
+  padding:2.5rem; background:#0D1A1C; border:1px solid var(--border); 
+  border-left:4px solid var(--gold); margin-bottom:2rem;
+}
+.info-title { 
+  font-family:'Cormorant Garamond',serif; font-size:1.6rem; 
+  font-weight:500; color:var(--sand); margin-bottom:1rem; 
+}
+.info-text { font-size:0.95rem; color:var(--sand-muted); line-height:1.75; }
+
+/* ─── ROADMAP & STRATEGY ─── */
+.roadmap-section { background:#0A1618; border-top:1px solid var(--border); }
+.roadmap-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; margin-top:4rem; }
+.road-phase { padding:2.5rem; background:#122023; border:1px solid var(--border); }
+.road-num { 
+  width:45px;height:45px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-family:'Cormorant Garamond',serif;
+  font-size:1.4rem;font-weight:700;margin-bottom:1.5rem; 
+  background:rgba(201,160,90,0.15); color:var(--gold);
+}
+.road-title { 
+  font-family:'Cormorant Garamond',serif; font-size:1.4rem; 
+  font-weight:500; color:var(--sand); margin-bottom:1.2rem; 
+}
+.road-item { 
+  font-size:0.85rem; color:var(--sand-muted); padding:0.6rem 0; 
+  border-bottom:1px solid rgba(255,255,255,0.04); display:flex; gap:0.8rem; 
+}
+.road-item::before { content:'\2022'; color:var(--gold); }
+
+/* ─── VISUAL IDENTITY ─── */
+.swatch { width:100px; text-align:center; }
+.swatch-color { width:100px; height:70px; border-radius:4px; margin-bottom:0.8rem; box-shadow:inset 0 0 10px rgba(0,0,0,0.3); }
+.swatch-name { font-family:'Inter',sans-serif; font-size:0.65rem; color:var(--sand-muted); letter-spacing:0.1em; text-transform:uppercase; }
+
+@media(max-width:900px){
+  .contact-grid { grid-template-columns:1fr; }
+  .roadmap-grid { grid-template-columns:1fr; }
+  .page-hero { padding:120px 1.5rem 60px; }
+}
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<div class="page-hero">
+  <div class="page-hero-tag">Strategy · Execution · Global Reach</div>
+  <h1 class="gold-shimmer-text">Start the Conversation.<br><em>Build the Future.</em></h1>
+  <p>Our Singapore team responds within 48 hours for global briefs. Tell us about your project or request a specialist capability deck.</p>
+</div>
+
+<section class="section">
+  <div class="contact-grid">
+    <div>
+      <div class="form-row" style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+        <div class="form-group"><label class="form-label">First Name</label><input type="text" class="form-input" placeholder="Enter first name"></div>
+        <div class="form-group"><label class="form-label">Last Name</label><input type="text" class="form-input" placeholder="Enter last name"></div>
+      </div>
+      <div class="form-group"><label class="form-label">Email Address</label><input type="email" class="form-input" placeholder="professional@company.com"></div>
+      <div class="form-group">
+        <label class="form-label">Sector of Interest</label>
+        <select class="form-select">
+          <option>Net Zero / High Performance</option>
+          <option>Data Centers / Mission Critical</option>
+          <option>Cold Storage / Industrial</option>
+          <option>Retrofit / Decarbonisation</option>
+        </select>
+      </div>
+      <div class="form-group"><label class="form-label">Brief Overview</label><textarea class="form-textarea" placeholder="How can VG assist your project?"></textarea></div>
+      <button class="btn btn-gold" style="width:100%; padding:1.5rem;">Submit Global Inquiry</button>
+    </div>
+
+    <div class="contact-info">
+      <div class="info-block">
+        <div class="info-title">Singapore HQ</div>
+        <div class="info-text">
+          VG International SG Pte Ltd<br>
+          Singapore · Project Hub<br><br>
+          📧 consult@vginternational.com.sg<br>
+          📞 (Global Project Desk) Available 24/5
+        </div>
+      </div>
+      <div class="info-block" style="border-left-color:var(--teal-glow);">
+        <div class="info-title">What Happens Next</div>
+        <div class="info-text">
+          <strong>48 Hours:</strong> Initial technical response<br>
+          <strong>1 Week:</strong> Strategy & scope alignment call<br>
+          <strong>2 Weeks:</strong> Integrated fee proposal
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section roadmap-section">
+  <div class="section-tag">Strategic Roadmap</div>
+  <h2 class="section-title gold-shimmer-text">Phased Project<br><em>Execution</em></h2>
+  <div class="roadmap-grid">
+    <div class="road-phase">
+      <div class="road-num">1</div>
+      <div class="road-title">Foundation</div>
+      <div class="road-item">Core identity & global strategy</div>
+      <div class="road-item">Technical keyword mapping</div>
+    </div>
+    <div class="road-phase">
+      <div class="road-num">2</div>
+      <div class="road-title">Integrated Design</div>
+      <div class="road-item">A+S+MEPF BIM coordination</div>
+      <div class="road-item">Mobile-responsive architecture</div>
+    </div>
+    <div class="road-phase">
+      <div class="road-num">3</div>
+      <div class="road-title">Authority</div>
+      <div class="road-item">Case study & ROI analysis</div>
+      <div class="road-item">Lead magnet & resource library</div>
+    </div>
+    <div class="road-phase">
+      <div class="road-num">4</div>
+      <div class="road-title">Global Impact</div>
+      <div class="road-item">Multi-language market rollout</div>
+      <div class="road-item">Continuous performance audit</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#0D1A1C;">
+  <div class="section-tag">Visual Identity System</div>
+  <h2 class="section-title gold-shimmer-text">The VG Design<br><em>Language</em></h2>
+  <div style="display:flex; gap:2rem; flex-wrap:wrap; margin-top:3rem; justify-content:center;">
+    <div class="swatch"><div class="swatch-color" style="background:#050C0D;"></div><div class="swatch-name">Deep Charcoal</div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#0A1618;"></div><div class="swatch-name">Imperial Teal</div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#C9A05A;"></div><div class="swatch-name">Royal Gold</div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#F2EDE4;"></div><div class="swatch-name">Premium Sand</div></div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="js/shared.js"></script>
+</body>
+</html>
