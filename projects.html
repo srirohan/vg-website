@@ -7,140 +7,73 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="css/style.css">
 <style>
-/* ─── PROJECTS HERO ─── */
-.page-hero {
-  padding: 160px 2rem 100px;
-  background: radial-gradient(circle at top right, #F4F0E8 0%, #F9F7F2 100%);
-  border-bottom: 1px solid var(--border);
-  position:relative; overflow:hidden;
+.outcomes-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--border);
+  background: var(--bg-2);
+  margin-top: 5rem;
+}
+.outcome-cell {
+  padding: 2.5rem 2rem;
+  border-right: 1px solid var(--border);
   text-align: center;
 }
-.page-hero h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.5rem, 6vw, 5.2rem);
-  font-weight: 400; line-height: 1.1; letter-spacing: -0.02em;
-  margin: 1.5rem auto; color: var(--sand);
-  max-width: 1200px;
-}
-.page-hero p {
-  max-width: 800px; margin: 0 auto;
-  color: var(--sand-muted); font-size: 1.15rem; line-height: 1.7;
-}
-
-/* ─── FILTER BAR ─── */
-.filter-bar { display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:4rem; justify-content:center; }
-.filter-btn { 
-  font-family:'Inter',sans-serif; font-size:0.65rem; font-weight:600; 
-  letter-spacing:0.15em; text-transform:uppercase; padding:0.6rem 1.4rem; 
-  border:1px solid var(--border); color:var(--sand-muted); 
-  background:var(--bg-3); cursor:pointer; transition:all 0.3s; 
-}
-.filter-btn.active, .filter-btn:hover { 
-  background:var(--gold); color:#050C0D; border-color:var(--gold); 
-  box-shadow: 0 0 15px rgba(201,160,90,0.3);
-}
-
-/* ─── PROJECT CARDS ─── */
-.projects-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
-.proj-card { 
-  background:var(--bg-3); border:1px solid var(--border); 
-  overflow:hidden; transition:all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
-}
-.proj-card:hover { transform:translateY(-8px); box-shadow:var(--shadow-lg); border-color:var(--gold); }
-
-.proj-thumb { 
-  height:260px; background:var(--bg-2); display:flex; 
-  align-items:center; justify-content:center; font-size:4.5rem; 
-  position:relative; border-bottom:1px solid var(--border);
-}
-.proj-thumb-overlay { 
-  position:absolute; inset:0; opacity:0; background:rgba(249,247,242,0.85); 
-  display:flex; align-items:center; justify-content:center; transition:opacity 0.4s; 
-  backdrop-filter: blur(4px);
-}
-.proj-card:hover .proj-thumb-overlay { opacity:1; }
-.proj-thumb-overlay span { 
-  font-family:'Inter',sans-serif; font-size:0.65rem; font-weight:600; 
-  letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); 
-  border:1px solid var(--gold); padding:0.7rem 1.5rem; 
-}
-
-.proj-body { padding:2rem; }
-.proj-tags { display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1.2rem; }
-.proj-tag { 
-  font-family:'Inter',sans-serif; font-size:0.58rem; font-weight:700;
-  letter-spacing:0.12em; text-transform:uppercase; padding:0.3rem 0.8rem; 
-  border:1px solid var(--border); color:var(--sand-muted);
-}
-.pt-sea { border-color:var(--teal-glow); color:var(--teal-glow); }
-.pt-gcc { border-color:var(--gold); color:var(--gold); }
-
-.proj-title { 
-  font-family:'Cormorant Garamond',serif; font-size:1.6rem; 
-  font-weight:500; color:var(--sand); margin-bottom:0.8rem; line-height:1.2;
-}
-.proj-desc { font-size:0.9rem; color:var(--sand-muted); line-height:1.7; margin-bottom:1.5rem; }
-
-.proj-metrics { 
-  border-top:1px solid var(--border); padding-top:1.2rem; 
-  display:flex; flex-wrap:wrap; gap:1rem; 
-}
-.proj-metric { 
-  font-family:'Inter',sans-serif; font-size:0.62rem; color:var(--gold); 
-  letter-spacing:0.1em; text-transform:uppercase; font-weight:600;
-}
-
-/* ─── OUTCOMES ─── */
-.outcomes-strip { 
-  display:grid; grid-template-columns:repeat(4,1fr); gap:0; 
-  margin-top:6rem; border:1px solid var(--border); background:var(--bg-3);
-}
-.outcome-box { padding:4rem 2rem; border-right:1px solid var(--border); text-align:center; }
-.outcome-box:last-child { border-right:none; }
-.outcome-num { 
-  font-family:'Cormorant Garamond',serif; font-size:3.5rem; 
-  font-weight:300; line-height:1; margin-bottom:0.8rem; color:var(--gold);
-}
-.outcome-label { 
-  font-size:0.75rem; color:var(--sand-muted); letter-spacing:0.12em; 
-  line-height:1.5; text-transform:uppercase; 
-}
+.outcome-cell:last-child { border-right: none; }
+.outcome-big { font-family: var(--f-display); font-size: 2.8rem; font-weight: 400; color: var(--gold); line-height: 1; margin-bottom: 8px; }
+.outcome-lbl { font-family: var(--f-body); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); }
 
 @media(max-width:900px){
-  .projects-grid{grid-template-columns:1fr;}
-  .outcomes-strip{grid-template-columns:repeat(2,1fr);}
-  .page-hero { padding:120px 1.5rem 60px; }
+  .outcomes-strip { grid-template-columns: repeat(2,1fr); }
+  .projects-grid { grid-template-columns: 1fr !important; }
 }
 </style>
 </head>
 <body>
+<div id="scroll-progress"></div>
 <div id="nav-placeholder"></div>
 
-<div class="page-hero">
-  <div class="page-hero-tag">Global Project Portfolio</div>
-  <h1 class="gold-shimmer-text">Our Work Speaks<br><em>For Itself</em></h1>
-  <p>From net-zero campuses to hyperscale data centers — every project reflects our integrated A+S+MEPF delivery model across 6 key regions.</p>
-</div>
+<!-- CINEMATIC HERO -->
+<section class="video-hero tall">
+  <div class="video-hero-bg">
+    <video autoplay muted loop playsinline>
+      <source src="Public/grok-video-4b05b2da-9c78-42ac-9faa-d935e0daa63f.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="video-hero-overlay"></div>
+  <div class="video-hero-content">
+    <div class="eyebrow eyebrow-white">Global Project Portfolio</div>
+    <h1 class="display-xl">Our work<br><em>speaks for itself.</em></h1>
+    <p class="hero-sub">From net-zero campuses to hyperscale data centres — every project reflects our integrated A+S+MEPF delivery model.</p>
+  </div>
+</section>
 
-<section class="section" style="padding-top:5rem;">
-  <div class="filter-bar">
+<div id="trust-placeholder"></div>
+
+<!-- PROJECTS GRID -->
+<div class="section">
+
+  <!-- Filter -->
+  <div class="filter-bar reveal-init">
     <button class="filter-btn active">All Projects</button>
     <button class="filter-btn">Southeast Asia</button>
     <button class="filter-btn">South Asia</button>
     <button class="filter-btn">GCC Region</button>
     <button class="filter-btn">Net Zero</button>
-    <button class="filter-btn">Data Centers</button>
+    <button class="filter-btn">Data Centres</button>
     <button class="filter-btn">Retrofit</button>
   </div>
 
-  <div class="projects-grid">
+  <div class="projects-grid" style="grid-template-columns:repeat(3,1fr);">
+
     <!-- Project 01 -->
-    <div class="proj-card">
-      <div class="proj-thumb">🏙️
+    <div class="proj-card reveal-init">
+      <div class="proj-thumb">
+        <img src="hero_architectural_render_1_1775640076369.png" alt="Net Zero Campus">
         <div class="proj-thumb-overlay"><span>In-Depth Case Study</span></div>
       </div>
       <div class="proj-body">
-        <div class="proj-tags"><span class="proj-tag pt-sea">Southeast Asia</span><span class="proj-tag">Net Zero</span></div>
+        <div class="proj-tags"><span class="proj-tag pt-sea">Southeast Asia</span><span class="proj-tag tag-gold">Net Zero</span></div>
         <div class="proj-title">Net Zero Office Campus, Singapore</div>
         <div class="proj-desc">Full A+S+MEPF delivery for a 65,000 sqm mixed-use campus targeting BCA Green Mark Platinum.</div>
         <div class="proj-metrics"><span class="proj-metric">↓ 42% Energy</span><span class="proj-metric">BCA Platinum</span></div>
@@ -148,70 +81,113 @@
     </div>
 
     <!-- Project 02 -->
-    <div class="proj-card">
-      <div class="proj-thumb">🖥️
+    <div class="proj-card reveal-init">
+      <div class="proj-thumb">
+        <img src="datacenter_render_1_1775640103196.png" alt="Data Center UAE">
         <div class="proj-thumb-overlay"><span>In-Depth Case Study</span></div>
       </div>
       <div class="proj-body">
-        <div class="proj-tags"><span class="proj-tag pt-gcc">GCC Region</span><span class="proj-tag">Data Center</span></div>
-        <div class="proj-title">Hyperscale Data Center Campus, UAE</div>
-        <div class="proj-desc">Tier IV campus planning, 12 kN/m² structural loading and full liquid cooling MEPF integration.</div>
-        <div class="proj-metrics"><span class="proj-metric">PUE 1.28</span><span class="proj-metric">48MW LOAD</span></div>
+        <div class="proj-tags"><span class="proj-tag pt-gcc">GCC Region</span><span class="proj-tag tag-blue">Data Centre</span></div>
+        <div class="proj-title">Hyperscale Data Centre Campus, UAE</div>
+        <div class="proj-desc">Tier IV master planning &amp; liquid cooling integration for 48MW hyperscale load. Full A+S+MEPF design.</div>
+        <div class="proj-metrics"><span class="proj-metric">PUE 1.28</span><span class="proj-metric">48 MW</span></div>
       </div>
     </div>
 
     <!-- Project 03 -->
-    <div class="proj-card">
-      <div class="proj-thumb">❄️
+    <div class="proj-card reveal-init">
+      <div class="proj-thumb">
+        <img src="industrial_cold_storage_render_1_1775640124865.png" alt="Cold Storage Hub">
         <div class="proj-thumb-overlay"><span>In-Depth Case Study</span></div>
       </div>
       <div class="proj-body">
-        <div class="proj-tags"><span class="proj-tag pt-sea">South Asia</span><span class="proj-tag">Cold Chain</span></div>
-        <div class="proj-title">Temperature-Controlled Logistics Hub, India</div>
-        <div class="proj-desc">85,000 sqm multi-temperature facility with ammonia/CO₂ cascade refrigeration systems.</div>
-        <div class="proj-metrics"><span class="proj-metric">85k SQM</span><span class="proj-metric">NH₃/CO₂</span></div>
+        <div class="proj-tags"><span class="proj-tag pt-ind">South Asia</span><span class="proj-tag tag-teal">Cold Chain</span></div>
+        <div class="proj-title">Ammonia Cascade Cold Hub, India</div>
+        <div class="proj-desc">85,000 sqm multi-temp facility with ammonia/CO₂ cascade refrigeration. High-load structural at 45 kN/m².</div>
+        <div class="proj-metrics"><span class="proj-metric">85k SQM</span><span class="proj-metric">NH₃ Cooling</span></div>
       </div>
     </div>
 
     <!-- Project 04 -->
-    <div class="proj-card">
-      <div class="proj-thumb">🏭
-        <div class="proj-thumb-overlay"><span>In-Depth Case Study</span></div>
+    <div class="proj-card reveal-init">
+      <div class="proj-thumb" style="font-size:3rem; background:var(--bg-3);">🏢
+        <div class="proj-thumb-overlay"><span>Case Study</span></div>
       </div>
       <div class="proj-body">
-        <div class="proj-tags"><span class="proj-tag">Europe</span><span class="proj-tag">Retrofit</span></div>
-        <div class="proj-title">Commercial Tower Decarbonisation, UK</div>
-        <div class="proj-desc">ASHRAE Level III audit and structural strengthening for high-performance facade upgrade.</div>
-        <div class="proj-metrics"><span class="proj-metric">↓ 58% Carbon</span><span class="proj-metric">EPC A Rating</span></div>
+        <div class="proj-tags"><span class="proj-tag pt-gcc">GCC Region</span><span class="proj-tag tag-gold">Retrofit</span></div>
+        <div class="proj-title">HVAC Deep Retrofit, Riyadh</div>
+        <div class="proj-desc">Full MEPF retrofit for 38,000 sqm commercial tower. Reduced HVAC energy consumption by 55% while maintaining full occupancy.</div>
+        <div class="proj-metrics"><span class="proj-metric">↓ 55% HVAC</span><span class="proj-metric">LEED EB Gold</span></div>
       </div>
     </div>
+
+    <!-- Project 05 -->
+    <div class="proj-card reveal-init">
+      <div class="proj-thumb" style="font-size:3rem; background:var(--bg-3);">🏫
+        <div class="proj-thumb-overlay"><span>Case Study</span></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags"><span class="proj-tag pt-sea">Southeast Asia</span><span class="proj-tag tag-green">Net Zero</span></div>
+        <div class="proj-title">University Innovation Hub, Malaysia</div>
+        <div class="proj-desc">Architectural concept through MEPF detailed design for a 22,000 sqm innovation campus. Net zero energy target, IGBC Gold.</div>
+        <div class="proj-metrics"><span class="proj-metric">Net Zero</span><span class="proj-metric">IGBC Gold</span></div>
+      </div>
+    </div>
+
+    <!-- Project 06 -->
+    <div class="proj-card reveal-init">
+      <div class="proj-thumb" style="font-size:3rem; background:var(--bg-3);">🏭
+        <div class="proj-thumb-overlay"><span>Case Study</span></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags"><span class="proj-tag pt-ind">South Asia</span><span class="proj-tag tag-blue">Mission Critical</span></div>
+        <div class="proj-title">Edge Data Centre Network, India</div>
+        <div class="proj-desc">15-site edge DC rollout across Tier 2 cities — standardised POD design, Uptime Tier III construction, 12-month delivery programme.</div>
+        <div class="proj-metrics"><span class="proj-metric">15 Sites</span><span class="proj-metric">Tier III</span></div>
+      </div>
+    </div>
+
   </div>
 
-  <div class="outcomes-strip">
-    <div class="outcome-box"><div class="outcome-num">40+</div><div class="outcome-label">Net-zero projects</div></div>
-    <div class="outcome-box"><div class="outcome-num">12</div><div class="outcome-label">Active Countries</div></div>
-    <div class="outcome-box"><div class="outcome-num">380k</div><div class="outcome-label">MWh energy saved</div></div>
-    <div class="outcome-box"><div class="outcome-num">$2B+</div><div class="outcome-label">Project Value</div></div>
-  </div>
-</section>
-
-<div class="cta-band" style="background:#050C0D; border-top:1px solid var(--border); padding:8rem 2rem; text-align:center;">
-  <h2 class="gold-shimmer-text" style="font-size:clamp(2rem,4vw,3.5rem); margin-bottom:1.5rem;">Have a Project in Mind?<br><em style="color:var(--sand);">Let's Talk Numbers.</em></h2>
-  <div class="btn-group" style="justify-content:center; margin-top:3rem;">
-    <a href="contact.html" class="btn btn-gold">Discuss Your Project</a>
-    <a href="insights.html" class="btn btn-outline" style="border-color:var(--border); color:var(--sand);">View Insights</a>
+  <!-- Outcome Metrics -->
+  <div class="outcomes-strip reveal-init">
+    <div class="outcome-cell">
+      <div class="outcome-big" data-count="200" data-suffix="+">200+</div>
+      <div class="outcome-lbl">Projects Delivered</div>
+    </div>
+    <div class="outcome-cell">
+      <div class="outcome-big" data-count="12" data-suffix="+">12+</div>
+      <div class="outcome-lbl">Global Markets</div>
+    </div>
+    <div class="outcome-cell">
+      <div class="outcome-big">$2B+</div>
+      <div class="outcome-lbl">Total Asset Value</div>
+    </div>
+    <div class="outcome-cell">
+      <div class="outcome-big" data-count="42" data-suffix="%">42%</div>
+      <div class="outcome-lbl">Avg. Energy Saved</div>
+    </div>
   </div>
 </div>
 
+<!-- VIDEO BREAK -->
+<section class="video-hero medium" style="margin:0;">
+  <div class="video-hero-bg">
+    <video autoplay muted loop playsinline>
+      <source src="Public/grok-video-1aac2b0e-0000-4c14-b523-3ff23140ae55.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="video-hero-overlay" style="background:linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 60%);"></div>
+  <div class="video-hero-content" style="align-self:flex-end; margin-bottom:60px;">
+    <div class="eyebrow eyebrow-white">Next Project</div>
+    <h2 class="display-lg">Your brief.<br><em>Our expertise.</em></h2>
+    <div class="btn-row center" style="margin-top:2rem;">
+      <a href="contact.html" class="btn btn-gold">Start a Conversation</a>
+    </div>
+  </div>
+</section>
+
 <div id="footer-placeholder"></div>
 <script src="js/shared.js"></script>
-<script>
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
-    });
-  });
-</script>
 </body>
 </html>

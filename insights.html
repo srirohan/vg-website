@@ -6,177 +6,168 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="css/style.css">
-<style>
-/* ─── INSIGHTS HERO ─── */
-.page-hero {
-  padding: 160px 2rem 100px;
-  background: radial-gradient(circle at top right, #F4F0E8 0%, #F9F7F2 100%);
-  border-bottom: 1px solid var(--border);
-  position:relative; overflow:hidden;
-  text-align: center;
-}
-.page-hero h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.5rem, 6vw, 5.2rem);
-  font-weight: 400; line-height: 1.1; letter-spacing: -0.02em;
-  margin: 1.5rem auto; color: var(--sand);
-  max-width: 1200px;
-}
-.page-hero p {
-  max-width: 800px; margin: 0 auto;
-  color: var(--sand-muted); font-size: 1.15rem; line-height: 1.7;
-}
-
-/* ─── INSIGHTS GRID ─── */
-.insights-grid { display:grid; grid-template-columns:2.2fr 1fr; gap:4rem; }
-
-.article-card { 
-  background:var(--bg-3); border:1px solid var(--border); 
-  display:grid; grid-template-columns:200px 1fr; overflow:hidden; 
-  transition:all 0.4s; margin-bottom:2rem;
-}
-.article-card:hover { border-color:var(--gold); transform:translateX(5px); box-shadow:var(--shadow-lg); }
-
-.article-thumb { 
-  display:flex; align-items:center; justify-content:center; 
-  font-size:3.5rem; background:var(--bg-2); border-right:1px solid var(--border);
-}
-.article-body { padding:2.5rem; }
-.article-meta { display:flex; gap:1.2rem; align-items:center; margin-bottom:1rem; }
-.article-tag { 
-  font-family:'Inter',sans-serif; font-size:0.6rem; font-weight:700;
-  letter-spacing:0.15em; text-transform:uppercase; padding:0.35rem 1rem; 
-  border:1px solid var(--gold); color:var(--gold);
-}
-.article-date { 
-  font-family:'Inter',sans-serif; font-size:0.65rem; color:var(--sand-muted); 
-  letter-spacing:0.1em; text-transform:uppercase;
-}
-
-.article-title { 
-  font-family:'Cormorant Garamond',serif; font-size:1.8rem; 
-  font-weight:500; color:var(--sand); margin-bottom:1rem; line-height:1.2;
-}
-.article-excerpt { font-size:0.95rem; color:var(--sand-muted); line-height:1.75; margin-bottom:1.5rem; }
-.article-read-more { 
-  font-size:0.7rem; font-weight:700; letter-spacing:0.15em; 
-  text-transform:uppercase; color:var(--gold); cursor:pointer;
-}
-
-/* ─── SIDEBAR ─── */
-.sidebar-block { 
-  border:1px solid var(--border); padding:2.5rem; 
-  background:var(--bg-3); margin-bottom:2.5rem; 
-}
-.sidebar-title { 
-  font-family:'Cormorant Garamond',serif; font-size:1.5rem; 
-  font-weight:500; color:var(--sand); margin-bottom:1.8rem; 
-  padding-bottom:1rem; border-bottom:1px solid var(--gold); 
-}
-
-.whitepaper-item { 
-  display:flex; gap:1.2rem; padding:1.2rem 0; 
-  border-bottom:1px solid var(--border); 
-}
-.wp-icon { font-size:2rem; }
-.wp-title { font-family:'Cormorant Garamond',serif; font-size:1.15rem; color:var(--sand); margin-bottom:0.4rem; }
-.wp-meta { font-size:0.65rem; color:var(--sand-muted); letter-spacing:0.08em; text-transform:uppercase; }
-
-.topic-pill { 
-  font-size:0.65rem; padding:0.4rem 1rem; border:1px solid var(--border); 
-  color:var(--sand-muted); cursor:pointer; transition:all 0.3s; margin:0.2rem; display:inline-block;
-}
-.topic-pill:hover { background:var(--gold); color:#050C0D; border-color:var(--gold); }
-
-/* ─── SEO GRIDS ─── */
-.keyword-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; margin-top:4rem; }
-.kw-cat { 
-  font-family:'Cormorant Garamond',serif; font-size:1.4rem; 
-  color:var(--gold); margin-bottom:1.2rem; padding-bottom:0.8rem; 
-  border-bottom:1px solid var(--border);
-}
-.kw-item { 
-  font-size:0.8rem; color:var(--sand-muted); padding:0.6rem 0; 
-  border-bottom:1px solid rgba(255,255,255,0.03); 
-}
-
-@media(max-width:900px){
-  .insights-grid{grid-template-columns:1fr;}
-  .article-card{grid-template-columns:1fr;}
-  .article-thumb{height:180px; border-right:none; border-bottom:1px solid var(--border);}
-  .page-hero { padding:120px 1.5rem 60px; }
-  .keyword-grid { grid-template-columns:1fr; }
-}
-</style>
 </head>
 <body>
+<div id="scroll-progress"></div>
 <div id="nav-placeholder"></div>
 
-<div class="page-hero">
-  <div class="page-hero-tag">Insights · Articles · World-Class Authority</div>
-  <h1 class="gold-shimmer-text">Global Authority in<br><em>Specialist Building Engineering</em></h1>
-  <p>Technical strategy, regulation trackers, and ROI calculators. We share the thinking that positions VG as the reference for high-performance consultancy.</p>
-</div>
+<!-- CINEMATIC HERO -->
+<section class="video-hero tall">
+  <div class="video-hero-bg">
+    <video autoplay muted loop playsinline>
+      <source src="Public/grok-video-c23f3ba2-6d90-4def-bf78-c7a36a2bf745.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="video-hero-overlay"></div>
+  <div class="video-hero-content">
+    <div class="eyebrow eyebrow-white">Industry Intelligence · Global Strategy</div>
+    <h1 class="display-xl">Market <em>Insights.</em></h1>
+    <p class="hero-sub">Technical intelligence, regulatory updates and strategic reports for the world's most complex building markets.</p>
+  </div>
+</section>
 
-<section class="section">
+<div id="trust-placeholder"></div>
+
+<!-- ARTICLES + SIDEBAR -->
+<div class="section">
   <div class="insights-grid">
+
+    <!-- Articles -->
     <div class="article-grid">
-      <!-- Article 01 -->
-      <div class="article-card">
+
+      <div class="article-card reveal-init">
         <div class="article-thumb">🌡️</div>
         <div class="article-body">
-          <div class="article-meta"><span class="article-tag">Net Zero</span><span class="article-date">March 2025</span></div>
-          <div class="article-title">Designing Net Zero Data Centers in Hot Climates</div>
-          <div class="article-excerpt">Integrated architectural shading, adiabatic pre-cooling and liquid-cooled rack systems for PUE < 1.3 in tropical environments.</div>
-          <div class="article-read-more">Read Full Analysis →</div>
+          <div class="article-tag">Net Zero · Strategy</div>
+          <div class="article-title">The Net Zero Building ROI Calculator: What Developers Need to Know in 2025</div>
+          <div class="article-intro">Achieving net zero is no longer just an ESG requirement — it has a quantifiable financial return. We break down the numbers across Singapore, UAE, and India markets.</div>
+          <div class="article-meta"><span>8 min read</span><span>March 2025</span></div>
         </div>
       </div>
-      <!-- Article 02 -->
-      <div class="article-card">
-        <div class="article-thumb">⚡</div>
+
+      <div class="article-card reveal-init">
+        <div class="article-thumb">🖥️</div>
         <div class="article-body">
-          <div class="article-meta"><span class="article-tag">Mission Critical</span><span class="article-date">February 2025</span></div>
-          <div class="article-title">Tier IV Commissioning in 18 Months: A Case Study</div>
-          <div class="article-excerpt">How VG's integrated delivery model compressed a hyperscale Tier IV project from architecture brief to IST completion.</div>
-          <div class="article-read-more">Read Full Analysis →</div>
+          <div class="article-tag">Data Centres · MEPF</div>
+          <div class="article-title">Liquid Cooling Adoption in APAC Data Centres: Technical &amp; Regulatory Landscape</div>
+          <div class="article-intro">Direct liquid cooling (DLC) is no longer optional for AI-grade data centres. We map the regulatory landscape and infrastructure requirements across ASEAN and GCC markets.</div>
+          <div class="article-meta"><span>12 min read</span><span>February 2025</span></div>
         </div>
+      </div>
+
+      <div class="article-card reveal-init">
+        <div class="article-thumb">❄️</div>
+        <div class="article-body">
+          <div class="article-tag">Cold Chain · Regulation</div>
+          <div class="article-title">F-Gas Phase-Out: What Cold Chain Operators Must Do Before 2027</div>
+          <div class="article-intro">The EU F-Gas Regulation and equivalent standards in Singapore and India are forcing a mandatory transition to low-GWP refrigerants. Here is the engineering roadmap.</div>
+          <div class="article-meta"><span>10 min read</span><span>January 2025</span></div>
+        </div>
+      </div>
+
+      <div class="article-card reveal-init">
+        <div class="article-thumb">🏗️</div>
+        <div class="article-body">
+          <div class="article-tag">BIM · Technology</div>
+          <div class="article-title">ISO 19650 Implementation Across GCC Projects: A Practical Guide</div>
+          <div class="article-intro">BIM adoption in the GCC is being driven by government mandate. We share how VG has implemented ISO 19650 compliant workflows across 15 projects in the UAE and Saudi Arabia.</div>
+          <div class="article-meta"><span>15 min read</span><span>December 2024</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Sidebar -->
+    <div>
+      <div class="sidebar-block reveal-init">
+        <div class="section-tag">Request a Report</div>
+        <p style="font-size:0.88rem;color:var(--ink-2);line-height:1.7;margin-bottom:1.5rem;">Receive our full market intelligence reports for your target geography — Net Zero, Data Centres, or Cold Chain.</p>
+        <a href="contact.html" class="btn btn-gold" style="width:100%;justify-content:center;">Get the Report</a>
+      </div>
+
+      <div class="sidebar-block reveal-init">
+        <div class="section-tag">Key Topics</div>
+        <ul class="arrow-list" style="margin-top:0.5rem;">
+          <li>Net Zero Strategy</li>
+          <li>Data Centre Engineering</li>
+          <li>Cold Chain Refrigeration</li>
+          <li>MEPF Innovation</li>
+          <li>BIM &amp; Digital Delivery</li>
+          <li>Owner's Advisory</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-block reveal-init">
+        <div class="section-tag">Active Markets</div>
+        <ul class="arrow-list" style="margin-top:0.5rem;">
+          <li>Singapore &amp; ASEAN</li>
+          <li>GCC &amp; Middle East</li>
+          <li>South Asia (India)</li>
+          <li>UK &amp; Europe</li>
+          <li>Australia &amp; NZ</li>
+        </ul>
       </div>
     </div>
 
-    <!-- SIDEBAR -->
-    <div class="sidebar">
-      <div class="sidebar-block">
-        <div class="sidebar-title">📘 Whitepaper Library</div>
-        <div class="whitepaper-item">
-          <div class="wp-icon">📘</div>
-          <div><div class="wp-title">Net Zero Buildings Asia 2025</div><div class="wp-meta">32 Pages · Authority Report</div></div>
-        </div>
-        <div class="whitepaper-item">
-          <div class="wp-icon">📗</div>
-          <div><div class="wp-title">Data Center Engineering Guide</div><div class="wp-meta">24 Pages · Technical Standards</div></div>
-        </div>
-        <div style="margin-top:2rem;"><a href="contact.html" class="btn btn-gold" style="width:100%; text-align:center;">Request Access</a></div>
-      </div>
+  </div>
+</div>
 
-      <div class="sidebar-block">
-        <div class="sidebar-title">📬 Authority Newsletter</div>
-        <p style="font-size:0.9rem; color:var(--sand-muted); line-height:1.7; margin-bottom:1.5rem;">The latest in global regulation, decarbonisation, and mission-critical engineering.</p>
-        <div style="display:flex; flex-direction:column; gap:1rem;">
-          <input type="email" placeholder="Professional Email" style="padding:1rem; background:rgba(255,255,255,0.03); border:1px solid var(--border); color:white; outline:none;">
-          <button class="btn btn-gold">Join 12,000+ Leaders</button>
-        </div>
+<!-- KEYWORD INTELLIGENCE -->
+<section class="section-alt">
+  <div class="inner">
+    <div class="section-header reveal-init">
+      <div class="section-tag">Market Intelligence</div>
+      <h2 class="sec-title">Global <em>signals</em><br>we track.</h2>
+    </div>
+    <div class="keyword-grid">
+      <div class="keyword-card reveal-init">
+        <div class="kw-num">Signal 01</div>
+        <div class="kw-title">APAC DC Pipeline</div>
+        <div class="kw-text">$28B in committed data centre capex across Southeast Asia by 2027. Singapore, Malaysia and Thailand lead.</div>
+      </div>
+      <div class="keyword-card reveal-init">
+        <div class="kw-num">Signal 02</div>
+        <div class="kw-title">Net Zero Mandates</div>
+        <div class="kw-text">New buildings must achieve NABERS 5-star or equivalent in 12 of VG's active markets by 2026.</div>
+      </div>
+      <div class="keyword-card reveal-init">
+        <div class="kw-num">Signal 03</div>
+        <div class="kw-title">Cold Chain Growth</div>
+        <div class="kw-text">Global cold storage capacity to double by 2035 driven by pharma, grocery ecommerce and food security investments.</div>
+      </div>
+      <div class="keyword-card reveal-init">
+        <div class="kw-num">Signal 04</div>
+        <div class="kw-title">F-Gas Transition</div>
+        <div class="kw-text">HFC phase-down accelerating globally. NH₃ and CO₂ becoming the only viable refrigerants at scale by 2028.</div>
+      </div>
+      <div class="keyword-card reveal-init">
+        <div class="kw-num">Signal 05</div>
+        <div class="kw-title">AI Power Demand</div>
+        <div class="kw-text">AI training infrastructure requires 5–20× more power density than traditional IT. DLC adoption now mandatory for GPU pods.</div>
+      </div>
+      <div class="keyword-card reveal-init">
+        <div class="kw-num">Signal 06</div>
+        <div class="kw-title">Retrofit Wave</div>
+        <div class="kw-text">60% of 2050's buildings already exist. Deep retrofit is the fastest-growing segment of the built environment market.</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" style="background:#0A1618; border-top:1px solid var(--border);">
-  <div class="section-tag">Strategic Content Plan</div>
-  <h2 class="section-title gold-shimmer-text">Global Authority<br><em>Keyword Strategy</em></h2>
-  <div class="keyword-grid">
-    <div><div class="kw-cat">Architecture</div><div class="kw-item">Net Zero Architecture firm Singapore</div><div class="kw-item">Sustainable building design Asia</div></div>
-    <div><div class="kw-cat">Mission Critical</div><div class="kw-item">Data Center MEPF Singapore</div><div class="kw-item">Tier IV design engineer UAE</div></div>
-    <div><div class="kw-cat">Cold Chain</div><div class="kw-item">Refrigeration consultant GCC</div><div class="kw-item">Ammonia cascade design Europe</div></div>
+<!-- VIDEO BREAK -->
+<section class="video-hero medium" style="margin:0;">
+  <div class="video-hero-bg">
+    <video autoplay muted loop playsinline>
+      <source src="Public/grok-video-a93527ab-5ca3-4bed-82b3-470a1e8af33f.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="video-hero-overlay" style="background:rgba(0,0,0,0.4);"></div>
+  <div class="video-hero-content">
+    <div class="eyebrow eyebrow-white">Stay Ahead</div>
+    <h2 class="display-lg">Intelligence is<br>a <em>competitive edge.</em></h2>
+    <div class="btn-row center" style="margin-top:2rem;">
+      <a href="contact.html" class="btn btn-gold">Request Full Reports</a>
+    </div>
   </div>
 </section>
 

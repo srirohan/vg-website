@@ -3,391 +3,240 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>VG International SG Pte Ltd — Architecture · Structure · MEPF · Global</title>
+<meta name="description" content="VG International SG Pte Ltd is a multi-discipline engineering consultancy delivering Architecture, Structural Engineering and MEPF from Singapore to the world.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="css/style.css">
-<style>
-/* ─── HERO ─── */
-#hero {
-  min-height:100vh; position:relative; overflow:hidden;
-  display:flex; align-items:center; justify-content:center;
-  padding-top:72px;
-}
-.hero-left {
-  position:relative; z-index:5; width:100%; max-width:1100px;
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-  padding:6rem 2rem; text-align:center;
-}
-.hero-eyebrow {
-  font-family:'Inter',sans-serif; font-size:0.65rem; letter-spacing:0.32em;
-  text-transform:uppercase; color:var(--gold); margin-bottom:1.5rem;
-  display:flex; align-items:center; gap:1.2rem; font-weight:700; /* Bold for visibility */
-}
-.hero-eyebrow::before, .hero-eyebrow::after { content:''; width:30px; height:1px; background:var(--gold); }
-.hero-h1 {
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(3rem,5.5vw,5.8rem); font-weight:400;
-  line-height:1.04; letter-spacing:-0.025em; color:var(--sand);
-  margin-bottom:2rem;
-  text-shadow: 0 1px 1px rgba(0,0,0,0.05); /* Ultra-subtle lift */
-}
-.hero-h1 em { font-style:italic; }
-.hero-h1 em, h2.section-title em {
-  display: inline-block;
-  background: var(--gold-metallic);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  animation: gold-shimmer 8s linear infinite;
-  text-shadow: none; /* Keep gold crisp */
-}
-.hero-sub {
-  font-family:'Inter',sans-serif;
-  font-size:1.15rem; font-weight:400; color:var(--sand); /* Slightly heavier weight */
-  line-height:1.75; max-width:800px; margin-bottom:3rem;
-  text-shadow: 0 1px 1px rgba(0,0,0,0.05);
-}
-.hero-stats {
-  display:flex; justify-content:center; gap:3rem;
-  border-top:1px solid rgba(26,26,26,0.15); margin-top:4rem;
-  width:100%; max-width:900px;
-}
-.h-stat { padding:1.8rem 1.5rem; text-align:center; }
-.h-stat:last-child { border-right:none; }
-.h-stat-num {
-  font-family:'Cormorant Garamond',serif; font-size:2.2rem; font-weight:400;
-  color:var(--gold); line-height:1;
-}
-.h-stat-label {
-  font-family:'Inter',sans-serif;
-  font-size:0.65rem; color:var(--sand-muted); margin-top:0.3rem; letter-spacing:0.04em;
-}
-.hero-right {
-  position:absolute; inset:0; z-index:1;
-}
-.hero-video {
-  position:absolute; inset:0;
-  width:100%; height:100%;
-  object-fit:cover;
-  opacity:0.92;
-}
-.hero-video-overlay {
-  position:absolute; inset:0;
-  /* Deepened the mist for better text contrast */
-  background: radial-gradient(circle at center, rgba(249,247,242,0.4) 0%, rgba(249,247,242,0.9) 100%);
-  backdrop-filter: brightness(1.05) blur(3px); /* Soften background noise */
-  z-index:2;
-}
-.hero-corner-label {
-  position:absolute; bottom:2.5rem; left:2.5rem;
-  font-family:'Inter',sans-serif; font-size:0.58rem;
-  color:rgba(232,220,200,0.5); letter-spacing:0.18em;
-  text-transform:uppercase; line-height:2; z-index:2;
-}
-.hero-art { position:absolute; inset:0; }
-.hero-grid-lines {
-  position:absolute; inset:0;
-  background-image:linear-gradient(rgba(201,160,90,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(201,160,90,0.06) 1px,transparent 1px);
-  background-size:50px 50px;
-}
-.ring {
-  position:absolute; border-radius:50%; border:1px solid;
-  animation:pulse 4s ease-in-out infinite;
-}
-.ring-1 { width:380px;height:380px; border-color:rgba(201,160,90,0.2); animation-delay:0s; }
-.ring-2 { width:260px;height:260px; border-color:rgba(78,158,150,0.35); animation-delay:-1.5s; }
-.ring-3 { width:140px;height:140px; background:rgba(78,158,150,0.08); border-color:rgba(78,158,150,0.55); animation-delay:-3s; }
-@keyframes pulse { 0%,100%{transform:scale(1);opacity:.6} 50%{transform:scale(1.05);opacity:1} }
-.hero-corner-label {
-  position:absolute; bottom:2.5rem; left:2.5rem;
-  font-family:'Inter',sans-serif; font-size:0.58rem;
-  color:var(--sand-faint); letter-spacing:0.18em;
-  text-transform:uppercase; line-height:2;
-}
-/* ─── DISCIPLINES TEASER ─── */
-.disc-tiles {
-  display:grid; grid-template-columns:repeat(3,1fr); gap:2px;
-  background: rgba(232,220,200,0.06); margin-top:3.5rem;
-}
-.disc-tile {
-  background:var(--bg-3); padding:2.5rem 2rem;
-  position:relative; overflow:hidden; transition:all 0.3s; cursor:pointer;
-  text-decoration:none; display:block;
-  border: 1px solid var(--border);
-}
-.disc-tile::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; }
-.dt-blue::before { background:var(--teal-glow); }
-.dt-gold::before { background:var(--gold); }
-.dt-teal::before { background:var(--teal-glow); }
-.disc-tile:hover { background:var(--surface); transform:translateY(-4px); box-shadow:var(--shadow-lg); }
-.disc-tile:hover .dt-title,.disc-tile:hover .dt-text { color:var(--sand); }
-.disc-tile:hover .dt-items { border-top-color:rgba(26,26,26,0.08); }
-.disc-tile:hover .dt-item { color:var(--sand-muted); border-bottom-color:rgba(26,26,26,0.08); }
-.dt-icon { font-size:1.8rem; margin-bottom:1.2rem; }
-.dt-title {
-  font-family:'Cormorant Garamond',serif; font-size:1.65rem; font-weight:500;
-  color:var(--sand); margin-bottom:0.3rem; transition:color 0.3s;
-}
-.dt-sub {
-  font-family:'Inter',sans-serif;
-  font-size:0.62rem; font-weight:500; letter-spacing:0.14em; text-transform:uppercase;
-  color:var(--gold); margin-bottom:1.2rem;
-}
-.dt-items { border-top:1px solid var(--border); padding-top:1rem; transition:border-color 0.3s; }
-.dt-item {
-  font-family:'Inter',sans-serif;
-  font-size:0.8rem; color:var(--sand-muted); padding:0.35rem 0;
-  border-bottom:1px solid var(--border); display:flex; gap:0.5rem;
-  transition:color 0.3s,border-bottom-color 0.3s;
-}
-.dt-item::before { content:'›'; color:var(--gold); flex-shrink:0; }
-/* ─── SPECIALISMS GRID ─── */
-.spec-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; margin-top:3rem; }
-.spec-card {
-  border:1px solid var(--border); padding:2.2rem 2rem;
-  transition:all 0.3s; text-decoration:none; display:block; background:var(--bg-3);
-}
-.spec-card:hover { border-color:var(--gold); transform:translateY(-4px); box-shadow:var(--shadow-lg); }
-.sc-num {
-  font-family:'Inter',sans-serif; font-size:0.58rem; color:var(--gold);
-  letter-spacing:0.15em; margin-bottom:1rem; font-weight:600;
-}
-.sc-title {
-  font-family:'Cormorant Garamond',serif; font-size:1.22rem; font-weight:500;
-  color:var(--sand); margin-bottom:0.7rem;
-}
-.sc-text {
-  font-family:'Inter',sans-serif;
-  font-size:0.82rem; color:var(--sand-muted); line-height:1.68; margin-bottom:1.2rem;
-}
-.sc-link {
-  font-family:'Inter',sans-serif;
-  font-size:0.66rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal-glow);
-}
-/* ─── BIG STATEMENT ─── */
-.statement-band { 
-  position:relative; min-height:80vh; overflow:hidden;
-  display:flex; align-items:center; justify-content:center;
-  padding:8rem 2rem; background:#050C0D;
-}
-.statement-video {
-  position:absolute; inset:0; width:100%; height:100%;
-  object-fit:cover; opacity:0.25; /* Lightened more for readability */
-}
-.statement-overlay {
-  position:absolute; inset:0;
-  background:radial-gradient(circle at center, rgba(249,247,242,0.3) 0%, rgba(249,247,242,1.0) 100%);
-  z-index:1;
-  backdrop-filter: blur(5px); /* Stronger blur for large text */
-}
-.statement-text {
-  position:relative; z-index:2;
-  font-family:'Cormorant Garamond',serif; font-size:clamp(2rem, 4.5vw, 3.8rem);
-  font-weight:400; color:var(--sand); line-height:1.15;
-  text-align:center; max-width:1300px; margin:0 auto;
-}
-.statement-text strong { font-weight:600; color:var(--gold); }
-/* ─── CASE STUDIES STRIP ─── */
-.case-strip { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:3rem; }
-.case-card { border:1px solid var(--border); overflow:hidden; background:var(--bg-3); }
-.case-thumb { height:200px; display:flex; align-items:center; justify-content:center; font-size:3rem; }
-.case-body { padding:1.8rem; }
-.case-region {
-  font-family:'Inter',sans-serif; font-size:0.56rem; letter-spacing:0.15em;
-  text-transform:uppercase; padding:0.2rem 0.6rem; display:inline-block; margin-bottom:0.8rem;
-}
-.cr-sea { background:rgba(78,158,150,0.12); color:var(--teal-glow); }
-.cr-gcc { background:rgba(201,160,90,0.12); color:var(--gold); }
-.cr-ind { background:rgba(78,158,150,0.1); color:var(--teal-glow); }
-.case-title {
-  font-family:'Cormorant Garamond',serif; font-size:1.18rem; font-weight:500;
-  color:var(--sand); margin-bottom:0.5rem;
-}
-.case-desc {
-  font-family:'Inter',sans-serif; font-size:0.8rem; color:var(--sand-muted); line-height:1.65; margin-bottom:1rem;
-}
-.case-metric {
-  font-family:'Inter',sans-serif; font-size:0.72rem; font-weight:600; color:var(--gold); letter-spacing:0.05em;
-}
-@media(max-width:900px) {
-  .hero-left { padding:6rem 1.5rem; }
-  .hero-stats { flex-direction:column; gap:0.5rem; }
-  .disc-tiles,.spec-grid,.case-strip { grid-template-columns:1fr; }
-}
-</style>
 </head>
 <body>
+
+<div id="scroll-progress"></div>
 <div id="nav-placeholder"></div>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-left">
-    <div class="hero-eyebrow">Singapore Headquartered · Global Delivery</div>
-    <h1 class="hero-h1">We design<br>the buildings<br>the world <em>needs next.</em></h1>
-    <p class="hero-sub">Architecture + Structural Engineering + MEPF — one integrated team, one brief, one point of accountability. Delivering globally from Singapore.</p>
-    <div class="btn-group">
-      <a href="disciplines.html" class="btn btn-dark">Explore Our Work</a>
-      <a href="contact.html" class="btn btn-outline">Request a Consultation</a>
-    </div>
-    <div class="hero-stats">
-      <div class="h-stat"><div class="h-stat-num">$14.4T</div><div class="h-stat-label">Global construction output by 2030</div></div>
-      <div class="h-stat"><div class="h-stat-num">6</div><div class="h-stat-label">Target global regions served</div></div>
-      <div class="h-stat"><div class="h-stat-num">A+S+M</div><div class="h-stat-label">One firm, total capability</div></div>
+<!-- ═══════════════════════════════════════════
+     HERO — Full-screen cinematic video
+═══════════════════════════════════════════ -->
+<section class="video-hero full-screen">
+  <div class="video-hero-bg">
+    <video autoplay muted loop playsinline>
+      <source src="Public/grok-video-9abbd56e-e507-4a5d-ba86-1cbf303e8865.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="video-hero-overlay"></div>
+
+  <div class="video-hero-content">
+    <div class="eyebrow eyebrow-white">Singapore Headquartered · Global Delivery</div>
+    <h1 class="display-xl">Engineering<br>the <em>Future.</em></h1>
+    <p class="hero-sub">High-performance Architecture, Structural Engineering and MEPF — integrated under one roof, delivered across 12 global markets.</p>
+    <div class="btn-row center">
+      <a href="contact.html" class="btn btn-gold">Start Your Brief</a>
+      <a href="projects.html" class="btn btn-outline-white">Explore Portfolio</a>
     </div>
   </div>
-  <div class="hero-right">
-    <video class="hero-video" autoplay muted loop playsinline>
-      <source src="Public/grok-video-a93527ab-5ca3-4bed-82b3-470a1e8af33f.mp4" type="video/mp4">
-    </video>
-    <div class="hero-video-overlay"></div>
-    <div class="hero-corner-label">A + S + MEPF · GLOBAL</div>
+
+  <!-- Stats anchored to bottom of hero -->
+  <div class="hero-stats-bar">
+    <div class="hstat">
+      <div class="hstat-num" data-count="12" data-suffix="+">12+</div>
+      <div class="hstat-label">Global Markets</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-num">$2B+</div>
+      <div class="hstat-label">Project Value</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-num" data-count="42" data-suffix="%">42%</div>
+      <div class="hstat-label">Avg. Energy Saved</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-num" data-count="200" data-suffix="+">200+</div>
+      <div class="hstat-label">Projects Delivered</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-num">ISO</div>
+      <div class="hstat-label">19650 BIM Certified</div>
+    </div>
   </div>
 </section>
 
+<!-- TRUST BAR -->
 <div id="trust-placeholder"></div>
 
-<!-- ABOUT TEASER (SHORTENED TO AVOID DUPLICATION) -->
-<section id="about" class="section" style="padding-top:8rem;">
-  <div class="header-split">
-    <div>
-      <div class="section-tag" style="color:var(--gold); letter-spacing: 0.35em;">About VG International</div>
-      <h2 class="section-title">
-        <span class="gold-shimmer-text">Engineering the Future,</span><br>
-        <em>Built on Trust.</em>
-      </h2>
-    </div>
-    <div style="padding-top:1rem;">
-      <p class="body-text" style="max-width:600px; font-size:1.1rem; line-height:1.8; color:var(--sand-muted);">
-        VG International delivers integrated architectural, structural, and MEPF consultancy from our Singapore headquarters. We help global clients navigate the complexities of net-zero and mission-critical assets with absolute financial clarity.
-      </p>
-      <div style="margin-top:2.5rem;">
-        <a href="about.html" class="btn btn-gold">Discover Our Story</a>
-        <a href="about.html#team" class="btn btn-outline" style="margin-left:1.5rem; color:var(--sand);">Meet the Directors</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BIG STATEMENT (UPGRADED WITH VIDEO BACKGROUND) -->
+<!-- ═══════════════════════════════════════════
+     STATEMENT
+═══════════════════════════════════════════ -->
 <div class="statement-band">
-  <video class="statement-video" autoplay muted loop playsinline>
-    <source src="Public/grok-video-c23f3ba2-6d90-4def-bf78-c7a36a2bf745.mp4" type="video/mp4">
-  </video>
-  <div class="statement-overlay"></div>
-  <p class="statement-text">Most global projects suffer from fragmented consultants who don't talk to each other. <strong>VG delivers Architecture, Structural Engineering and full MEPF from one integrated team</strong> — removing coordination risk, compressing timelines and protecting the owner's investment.</p>
+  <div class="inner">
+    <blockquote>"Most projects suffer from <em>fragmented</em> consultants."</blockquote>
+    <div class="statement-body">
+      <p>Architecture, Structural and MEPF from three different firms means misaligned drawings, costly RFIs, and schedule overruns. VG International solves this at source — one integrated team, one accountability, one outcome.</p>
+      <p>From net zero campuses in Singapore to hyperscale data centres in the UAE, we deliver the full design stack with the precision that mission-critical assets demand.</p>
+      <a href="about.html" class="btn btn-outline-dark" style="margin-top:8px; align-self:flex-start;">Our Story →</a>
+    </div>
+  </div>
 </div>
 
-<!-- DISCIPLINES TEASER -->
-<section class="section" id="disciplines">
-  <div class="section-tag" style="color:var(--gold); letter-spacing: 0.3em;">Excellence Defined</div>
-  <h2 class="section-title">Architecture + Structural + MEPF:<br><em>One Firm, Total Capability</em></h2>
-  <div class="disc-tiles">
-    <a href="disciplines.html#architecture" class="disc-tile dt-blue">
-      <div class="dt-icon">🏛</div>
-      <div class="dt-title">Architecture</div>
-      <div class="dt-sub">Form, Function & Experience</div>
-      <div class="dt-items">
-        <div class="dt-item">Concept design & schematic development</div>
-        <div class="dt-item">BIM modelling (Revit / ArchiCAD / IFC)</div>
-        <div class="dt-item">Facade & envelope design</div>
-        <div class="dt-item">Master planning & urban design</div>
-      </div>
-    </a>
-    <a href="disciplines.html#structural" class="disc-tile dt-gold">
-      <div class="dt-icon">⚙️</div>
-      <div class="dt-title">Structural</div>
-      <div class="dt-sub">Safety, Efficiency & Longevity</div>
-      <div class="dt-items">
-        <div class="dt-item">Concrete, steel & timber structural design</div>
-        <div class="dt-item">Seismic & wind load analysis</div>
-        <div class="dt-item">Progressive collapse & blast resistance</div>
-        <div class="dt-item">Structural peer review & value engineering</div>
-      </div>
-    </a>
-    <a href="disciplines.html#mepf" class="disc-tile dt-teal">
-      <div class="dt-icon">⚡</div>
-      <div class="dt-title">MEPF</div>
-      <div class="dt-sub">Performance, Efficiency & Reliability</div>
-      <div class="dt-items">
-        <div class="dt-item">Mechanical: HVAC, chilled water, ventilation</div>
-        <div class="dt-item">Electrical: HV/LV, lighting, BMS, EV charging</div>
-        <div class="dt-item">Plumbing & fire fighting systems</div>
-        <div class="dt-item">Net zero & energy performance design</div>
-      </div>
-    </a>
+<!-- ═══════════════════════════════════════════
+     PORTFOLIO — Magazine gallery with images
+═══════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header reveal-init">
+    <div class="section-tag">Selected Work</div>
+    <h2 class="sec-title">Built across<br>four <em>continents.</em></h2>
+  </div>
+
+  <!-- Project 01 -->
+  <div class="mag-pair reveal-init">
+    <div class="mag-image">
+      <img src="hero_architectural_render_1_1775640076369.png" alt="Net Zero Campus Singapore">
+      <div class="mag-label">PROJ 01 · Singapore</div>
+    </div>
+    <div class="mag-text">
+      <div class="mag-proj-id">Architecture + Structural + MEPF · 2024</div>
+      <h3 class="mag-title">Net Zero Office<br>Campus, <em>Singapore.</em></h3>
+      <p class="mag-desc">Full A+S+MEPF delivery for a 65,000 sqm mixed-use campus targeting BCA Green Mark Platinum. From concept to technical specification, VG led every design discipline as one integrated team.</p>
+      <div class="mag-metric">↓ 42% Energy</div>
+      <a href="projects.html" class="btn btn-outline-dark">View Case Study →</a>
+    </div>
+  </div>
+
+  <!-- Project 02 (reversed) -->
+  <div class="mag-pair reverse reveal-init">
+    <div class="mag-image">
+      <img src="datacenter_render_1_1775640103196.png" alt="Hyperscale Data Center UAE">
+      <div class="mag-label">PROJ 02 · UAE</div>
+    </div>
+    <div class="mag-text">
+      <div class="mag-proj-id">Mission Critical · MEPF + Structural · 2024</div>
+      <h3 class="mag-title">Hyperscale DC<br>Campus, <em>Abu Dhabi.</em></h3>
+      <p class="mag-desc">Tier IV master planning and liquid cooling integration for a 48MW hyperscale data campus. High-load structural design, N+1 power redundancy, and advanced airside economisation.</p>
+      <div class="mag-metric">PUE 1.28</div>
+      <a href="projects.html" class="btn btn-outline-dark">View Case Study →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     VIDEO BREAK — Disciplines teaser
+═══════════════════════════════════════════ -->
+<section class="video-hero medium" style="margin: 0;">
+  <div class="video-hero-bg">
+    <video autoplay muted loop playsinline>
+      <source src="Public/grok-video-4b05b2da-9c78-42ac-9faa-d935e0daa63f.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="video-hero-overlay" style="background: linear-gradient(to right, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.1) 100%);"></div>
+
+  <div class="video-hero-content" style="text-align: left; max-width: 700px; margin-right: auto; margin-left: var(--side);">
+    <div class="eyebrow eyebrow-white">One Firm · Total Capability</div>
+    <h2 class="display-lg">Architecture.<br>Structural. <em>MEPF.</em></h2>
+    <p class="hero-sub" style="margin: 0 0 32px 0;">No coordination gaps. No misaligned drawings. No excuses. Three disciplines, one integrated team.</p>
+    <a href="disciplines.html" class="btn btn-gold">Explore Disciplines →</a>
   </div>
 </section>
 
-<!-- PROOF STATS -->
-<div class="stats-strip" style="grid-template-columns:repeat(5,1fr);">
-  <div class="stat-box"><div class="stat-big" style="color:var(--blue);">$14.4T</div><div class="stat-label">Global construction output 2030</div><div class="stat-source">Oxford Economics</div></div>
-  <div class="stat-box"><div class="stat-big" style="color:var(--teal);">$1.5T</div><div class="stat-label">Green building market 2030</div><div class="stat-source">GBCI</div></div>
-  <div class="stat-box"><div class="stat-big" style="color:var(--violet);">700GW</div><div class="stat-label">New data center power by 2030</div><div class="stat-source">IEA Projection</div></div>
-  <div class="stat-box"><div class="stat-big" style="color:var(--gold);">80%</div><div class="stat-label">Buildings needing retrofit for net zero</div><div class="stat-source">UNEP 2024</div></div>
-  <div class="stat-box"><div class="stat-big" style="color:var(--coral);">195</div><div class="stat-label">Countries with net-zero pledges</div><div class="stat-source">Climate Policy Tracker</div></div>
+<!-- ═══════════════════════════════════════════
+     GLOBAL PROOF STATS
+═══════════════════════════════════════════ -->
+<div class="stats-strip">
+  <div class="stat-box">
+    <div class="stat-big" data-count="14.4" data-suffix="T">$14.4T</div>
+    <div class="stat-label">Market Growth 2030</div>
+    <div class="stat-source">Oxford Economics</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-big">700GW</div>
+    <div class="stat-label">DC Capacity Gap</div>
+    <div class="stat-source">IEA Projection</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-big" data-count="80" data-suffix="%">80%</div>
+    <div class="stat-label">Efficiency Deficit</div>
+    <div class="stat-source">UNEP 2024</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-big" data-count="195">195</div>
+    <div class="stat-label">Net Zero Markets</div>
+    <div class="stat-source">Climate Tracker</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-big">ISO</div>
+    <div class="stat-label">BIM Standards</div>
+    <div class="stat-source">Global delivery</div>
+  </div>
 </div>
 
-<!-- SPECIALISMS -->
-<section class="section section-alt" id="specialisms">
-  <div class="section-tag">Deep Specialisms</div>
-  <h2 class="section-title">Where VG Goes <em>Beyond the Brief</em></h2>
-  <div class="spec-grid">
-    <a href="specialisms.html#netzero" class="spec-card"><div class="sc-num">01 · NET ZERO</div><div class="sc-title">Net Zero & High Performance Buildings</div><div class="sc-text">VG embeds net zero thinking into Architecture, Structural material selection and MEPF system design — a whole-project outcome, not a service line.</div><div class="sc-link">Explore →</div></a>
-    <a href="specialisms.html#datacenter" class="spec-card"><div class="sc-num">02 · DATA CENTERS</div><div class="sc-title">Data Centers & Mission-Critical Infrastructure</div><div class="sc-text">700GW of new capacity needed by 2030. VG is one of very few consultancies delivering A+S+MEPF for hyperscale and edge facilities.</div><div class="sc-link">Explore →</div></a>
-    <a href="specialisms.html#coldchain" class="spec-card"><div class="sc-num">03 · COLD CHAIN</div><div class="sc-title">Cold Storage & Industrial Energy Systems</div><div class="sc-text">The global cold chain market exceeds $647B by 2028. Cold storage requires all three disciplines in perfect coordination — VG's advantage.</div><div class="sc-link">Explore →</div></a>
-    <a href="specialisms.html#retrofit" class="spec-card"><div class="sc-num">04 · RETROFITS</div><div class="sc-title">Retrofits & Decarbonisation</div><div class="sc-text">80% of 2050's buildings are already built. VG combines Architectural adaptation, Structural assessment and full MEPF decarbonisation in one BIM model.</div><div class="sc-link">Explore →</div></a>
-    <a href="specialisms.html#owners" class="spec-card"><div class="sc-num">05 · OWNER'S ENGINEERING</div><div class="sc-title">Owner's Engineering & Lifecycle ROI</div><div class="sc-text">We work exclusively for the building owner — no equipment sales, no contractor affiliations. We challenge, verify and model until numbers match spec.</div><div class="sc-link">Explore →</div></a>
-    <a href="specialisms.html#dpc" class="spec-card"><div class="sc-num">06 · D+P+C</div><div class="sc-title">Design + Procurement + Commissioning</div><div class="sc-text">Most consultancies stop at design. VG's integrated model means the same engineers who designed the building verify it performs as designed.</div><div class="sc-link">Explore →</div></a>
+<!-- ═══════════════════════════════════════════
+     SPECIALISMS GRID
+═══════════════════════════════════════════ -->
+<section class="section-alt">
+  <div class="inner">
+    <div class="section-header reveal-init">
+      <div class="section-tag">Deep Specialisms</div>
+      <h2 class="sec-title">Where VG goes<br><em>beyond the brief.</em></h2>
+    </div>
+    <div class="spec-grid">
+      <a href="specialisms.html#netzero" class="spec-card reveal-init">
+        <div class="sc-num">01 · Net Zero</div>
+        <div class="sc-title">Net Zero &amp; High-Performance Buildings</div>
+        <div class="sc-text">VG embeds net zero thinking into Architecture, Structural material selection and MEPF system design — a whole-project outcome, not a service line.</div>
+        <div class="sc-link">Explore</div>
+      </a>
+      <a href="specialisms.html#datacenter" class="spec-card reveal-init">
+        <div class="sc-num">02 · Mission Critical</div>
+        <div class="sc-title">Hyperscale Data Centres</div>
+        <div class="sc-text">From Tier II to Tier IV, VG has delivered mission-critical facilities across Singapore, the UAE, India and beyond — full A+S+MEPF every time.</div>
+        <div class="sc-link">Explore</div>
+      </a>
+      <a href="specialisms.html#coldchain" class="spec-card reveal-init">
+        <div class="sc-num">03 · Cold Chain</div>
+        <div class="sc-title">Industrial Refrigeration &amp; Cold Storage</div>
+        <div class="sc-text">Ammonia cascade, CO₂ transcritical, and hybrid refrigerants for large-scale multi-temp food logistics and pharmaceutical hubs.</div>
+        <div class="sc-link">Explore</div>
+      </a>
+      <a href="specialisms.html#retrofit" class="spec-card reveal-init">
+        <div class="sc-num">04 · Retrofit</div>
+        <div class="sc-title">Deep Retrofit &amp; Asset Optimisation</div>
+        <div class="sc-text">VG audits, models and redesigns existing buildings for energy efficiency — targeting NABERS, LEED EB and BREEAM In-Use certifications.</div>
+        <div class="sc-link">Explore</div>
+      </a>
+      <a href="specialisms.html#owners" class="spec-card reveal-init">
+        <div class="sc-num">05 · Owner's Eng.</div>
+        <div class="sc-title">Owner's Engineer &amp; Technical Advisor</div>
+        <div class="sc-text">Independent technical oversight for developers, sovereign wealth funds, and infrastructure investors — protecting your brief from design to handover.</div>
+        <div class="sc-link">Explore</div>
+      </a>
+      <a href="specialisms.html#dpc" class="spec-card reveal-init">
+        <div class="sc-num">06 · D+P+C</div>
+        <div class="sc-title">Design, Procurement &amp; Construction</div>
+        <div class="sc-text">Full DPC integration where VG functions as technical lead across procurement and delivery — reducing interface risk across fast-track programmes.</div>
+        <div class="sc-link">Explore</div>
+      </a>
+    </div>
   </div>
 </section>
 
-<!-- CASE STUDIES -->
-<section class="section">
-  <div class="section-tag">Selected Projects</div>
-  <h2 class="section-title">Our Work Speaks <em>For Itself</em></h2>
-  <div class="case-strip">
-    <div class="case-card">
-      <div class="case-thumb" style="background:#1B4FBF10;">🏙️</div>
-      <div class="case-body">
-        <span class="case-region cr-sea">Southeast Asia</span>
-        <div class="case-title">Net Zero Office Campus, Singapore</div>
-        <div class="case-desc">Full A+S+MEPF delivery for a 65,000 sqm mixed-use campus targeting BCA Green Mark Platinum. Integrated energy model achieved 42% energy reduction.</div>
-        <div class="case-metric">↓ 42% Energy · LEED Gold · $280M project value</div>
-      </div>
-    </div>
-    <div class="case-card">
-      <div class="case-thumb" style="background:#C9A84C10;">🏭</div>
-      <div class="case-body">
-        <span class="case-region cr-gcc">GCC Region</span>
-        <div class="case-title">Hyperscale Data Center, UAE</div>
-        <div class="case-desc">Tier IV campus master planning, white space layout, structural load design and full MEPF — including precision liquid cooling and IST commissioning.</div>
-        <div class="case-metric">PUE 1.28 · Tier IV · 48MW critical load</div>
-      </div>
-    </div>
-    <div class="case-card">
-      <div class="case-thumb" style="background:#0D6E6E10;">❄️</div>
-      <div class="case-body">
-        <span class="case-region cr-ind">South Asia</span>
-        <div class="case-title">Cold Chain Hub, India</div>
-        <div class="case-desc">Ammonia/CO₂ refrigeration design, high-load structural (45 kN/m²) and full architectural fit-out for a 85,000 sqm temperature-controlled facility.</div>
-        <div class="case-metric">85,000 sqm · NH₃ refrigeration · HACCP certified</div>
-      </div>
+<!-- ═══════════════════════════════════════════
+     VIDEO BREAK — Specialisms / CTA
+═══════════════════════════════════════════ -->
+<section class="video-hero tall" style="margin: 0;">
+  <div class="video-hero-bg">
+    <video autoplay muted loop playsinline>
+      <source src="Public/grok-video-a93527ab-5ca3-4bed-82b3-470a1e8af33f.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="video-hero-overlay" style="background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 60%);"></div>
+
+  <div class="video-hero-content" style="align-self: flex-end; text-align: center; margin-bottom: 80px;">
+    <div class="eyebrow eyebrow-white">What We Build</div>
+    <h2 class="display-lg">Ready to build something<br><em>extraordinary?</em></h2>
+    <p class="hero-sub" style="margin-bottom: 32px;">Tell us about your project. Our Singapore team responds within 48 hours.</p>
+    <div class="btn-row center">
+      <a href="contact.html" class="btn btn-gold">Request a Consultation</a>
+      <a href="about.html" class="btn btn-outline-white">Learn About VG</a>
     </div>
   </div>
-  <div style="text-align:center;margin-top:2.5rem;"><a href="projects.html" class="btn btn-outline">View All Projects</a></div>
 </section>
-
-
-<div class="cta-band">
-  <h2>Ready to Build Something <em style="color:var(--gold-light);">Extraordinary?</em></h2>
-  <p>Tell us about your project — Architecture, Structural, MEPF or all three. Our Singapore team is ready to scope, model and deliver globally.</p>
-  <div class="btn-group" style="justify-content:center;">
-    <a href="contact.html" class="btn btn-gold">Request a Consultation</a>
-    <a href="about.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.3);color:white;">Learn About VG</a>
-  </div>
-</div>
 
 <div id="footer-placeholder"></div>
 <script src="js/shared.js"></script>

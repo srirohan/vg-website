@@ -6,180 +6,155 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="css/style.css">
-<style>
-/* ─── CONTACT HERO ─── */
-.page-hero {
-  padding: 160px 2rem 100px;
-  background: radial-gradient(circle at top right, #F4F0E8 0%, #F9F7F2 100%);
-  border-bottom: 1px solid var(--border);
-  position:relative; overflow:hidden;
-  text-align: center;
-}
-.page-hero h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.5rem, 6vw, 5.2rem);
-  font-weight: 400; line-height: 1.1; letter-spacing: -0.02em;
-  margin: 1.5rem auto; color: var(--sand);
-  max-width: 1200px;
-}
-.page-hero p {
-  max-width: 800px; margin: 0 auto;
-  color: var(--sand-muted); font-size: 1.15rem; line-height: 1.7;
-}
-
-/* ─── CONTACT GRID & FORM ─── */
-.contact-grid { display:grid; grid-template-columns:1.2fr 1fr; gap:5rem; margin-top:5rem; }
-
-.form-group { margin-bottom:2rem; }
-.form-label { 
-  display:block; font-family:'Inter',sans-serif; font-size:0.65rem; 
-  font-weight:700; letter-spacing:0.15em; text-transform:uppercase; 
-  color:var(--gold); margin-bottom:0.8rem; 
-}
-.form-input, .form-select, .form-textarea {
-  width:100%; padding:1.2rem; border:1px solid var(--border);
-  font-family:'Inter',sans-serif; font-size:0.95rem; color:var(--sand);
-  background:var(--bg-3); outline:none; transition:all 0.3s;
-}
-.form-input:focus, .form-select:focus, .form-textarea:focus { 
-  border-color:var(--gold); background:var(--surface); 
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-.form-textarea { min-height:180px; }
-
-.info-block { 
-  padding:2.5rem; background:var(--bg-3); border:1px solid var(--border); 
-  border-left:4px solid var(--gold); margin-bottom:2rem;
-}
-.info-title { 
-  font-family:'Cormorant Garamond',serif; font-size:1.6rem; 
-  font-weight:500; color:var(--sand); margin-bottom:1rem; 
-}
-.info-text { font-size:0.95rem; color:var(--sand-muted); line-height:1.75; }
-
-/* ─── ROADMAP & STRATEGY ─── */
-.roadmap-section { background:var(--bg); border-top:1px solid var(--border); }
-.roadmap-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; margin-top:4rem; }
-.road-phase { padding:2.5rem; background:var(--bg-3); border:1px solid var(--border); }
-.road-num { 
-  width:45px;height:45px;border-radius:50%;display:flex;align-items:center;
-  justify-content:center;font-family:'Cormorant Garamond',serif;
-  font-size:1.4rem;font-weight:700;margin-bottom:1.5rem; 
-  background:rgba(184, 142, 69, 0.1); color:var(--gold);
-}
-.road-title { 
-  font-family:'Cormorant Garamond',serif; font-size:1.4rem; 
-  font-weight:500; color:var(--sand); margin-bottom:1.2rem; 
-}
-.road-item { 
-  font-size:0.85rem; color:var(--sand-muted); padding:0.6rem 0; 
-  border-bottom:1px solid var(--border); display:flex; gap:0.8rem; 
-}
-.road-item::before { content:'\2022'; color:var(--gold); }
-
-/* ─── VISUAL IDENTITY ─── */
-.swatch { width:100px; text-align:center; }
-.swatch-color { width:100px; height:70px; border-radius:4px; margin-bottom:0.8rem; box-shadow:inset 0 0 10px rgba(0,0,0,0.3); }
-.swatch-name { font-family:'Inter',sans-serif; font-size:0.65rem; color:var(--sand-muted); letter-spacing:0.1em; text-transform:uppercase; }
-
-@media(max-width:900px){
-  .contact-grid { grid-template-columns:1fr; }
-  .roadmap-grid { grid-template-columns:1fr; }
-  .page-hero { padding:120px 1.5rem 60px; }
-}
-</style>
 </head>
 <body>
+<div id="scroll-progress"></div>
 <div id="nav-placeholder"></div>
 
-<div class="page-hero">
-  <div class="page-hero-tag">Strategy · Execution · Global Reach</div>
-  <h1 class="gold-shimmer-text">Start the Conversation.<br><em>Build the Future.</em></h1>
-  <p>Our Singapore team responds within 48 hours for global briefs. Tell us about your project or request a specialist capability deck.</p>
+<!-- CINEMATIC HERO -->
+<section class="video-hero tall">
+  <div class="video-hero-bg">
+    <video autoplay muted loop playsinline>
+      <source src="Public/grok-video-4b05b2da-9c78-42ac-9faa-d935e0daa63f.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="video-hero-overlay"></div>
+  <div class="video-hero-content">
+    <div class="eyebrow eyebrow-white">Strategy · Execution · Global Reach</div>
+    <h1 class="display-xl">Start the<br><em>conversation.</em></h1>
+    <p class="hero-sub">Our Singapore team responds within 48 hours for global briefs. Tell us about your project or request a specialist capability deck.</p>
+  </div>
+</section>
+
+<div id="trust-placeholder"></div>
+
+<!-- CONTACT FORM + INFO -->
+<div class="section">
+  <div class="contact-grid">
+
+    <!-- Form -->
+    <div class="reveal-init">
+      <div class="section-header" style="margin-bottom:2.5rem;">
+        <div class="section-tag">Get in Touch</div>
+        <h2 class="sec-title" style="font-size:clamp(1.8rem,3vw,2.8rem);">Tell us about<br><em>your project.</em></h2>
+      </div>
+
+      <form action="#" method="post">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label>Company / Organisation *</label>
+          <input type="text" name="company" placeholder="Your company" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" name="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>Project Location</label>
+          <input type="text" name="location" placeholder="Country / City">
+        </div>
+        <div class="form-group">
+          <label>Discipline Required</label>
+          <select name="discipline">
+            <option value="">Select discipline(s)</option>
+            <option>Architecture</option>
+            <option>Structural Engineering</option>
+            <option>MEPF Engineering</option>
+            <option>Full A+S+MEPF</option>
+            <option>Owner's Engineering</option>
+            <option>Other / Not sure</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Project Brief</label>
+          <textarea name="message" placeholder="Tell us about the project — type, scale, timeline, and what you need from VG..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;padding:16px;">Send Brief →</button>
+      </form>
+    </div>
+
+    <!-- Info -->
+    <div>
+      <div class="info-block reveal-init">
+        <div class="section-tag">Singapore HQ</div>
+        <p style="font-size:0.9rem;color:var(--ink-2);line-height:1.9;">
+          18 Robinson Road, #09-01<br>
+          Singapore 048547<br><br>
+          <strong style="color:var(--ink);">Phone:</strong> +65 6123 4567<br>
+          <strong style="color:var(--ink);">Email:</strong> consult@vginternational.com.sg
+        </p>
+      </div>
+
+      <div class="info-block reveal-init">
+        <div class="section-tag">Response Commitment</div>
+        <p style="font-size:0.9rem;color:var(--ink-2);line-height:1.9;">
+          We respond to all enquiries within <strong style="color:var(--gold);">48 business hours</strong>. For urgent project briefs, call us directly and ask for the project director on duty.
+        </p>
+      </div>
+
+      <div class="info-block reveal-init">
+        <div class="section-tag">Global Coverage</div>
+        <ul class="arrow-list" style="margin-top:0.5rem;">
+          <li>Southeast Asia · Singapore (HQ)</li>
+          <li>South Asia · Mumbai &amp; Bangalore</li>
+          <li>GCC · Dubai &amp; Riyadh</li>
+          <li>UK · London</li>
+          <li>Australia · Sydney</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
 </div>
 
-<section class="section">
-  <div class="contact-grid">
-    <div>
-      <div class="form-row" style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
-        <div class="form-group"><label class="form-label">First Name</label><input type="text" class="form-input" placeholder="Enter first name"></div>
-        <div class="form-group"><label class="form-label">Last Name</label><input type="text" class="form-input" placeholder="Enter last name"></div>
-      </div>
-      <div class="form-group"><label class="form-label">Email Address</label><input type="email" class="form-input" placeholder="professional@company.com"></div>
-      <div class="form-group">
-        <label class="form-label">Sector of Interest</label>
-        <select class="form-select">
-          <option>Net Zero / High Performance</option>
-          <option>Data Centers / Mission Critical</option>
-          <option>Cold Storage / Industrial</option>
-          <option>Retrofit / Decarbonisation</option>
-        </select>
-      </div>
-      <div class="form-group"><label class="form-label">Brief Overview</label><textarea class="form-textarea" placeholder="How can VG assist your project?"></textarea></div>
-      <button class="btn btn-gold" style="width:100%; padding:1.5rem;">Submit Global Inquiry</button>
+<!-- ENGAGEMENT PROCESS -->
+<section class="section-alt">
+  <div class="inner">
+    <div class="section-header reveal-init">
+      <div class="section-tag">How We Work</div>
+      <h2 class="sec-title">From brief to<br><em>breakthrough.</em></h2>
     </div>
-
-    <div class="contact-info">
-      <div class="info-block">
-        <div class="info-title">Singapore HQ</div>
-        <div class="info-text">
-          VG International SG Pte Ltd<br>
-          Singapore · Project Hub<br><br>
-          📧 consult@vginternational.com.sg<br>
-          📞 (Global Project Desk) Available 24/5
-        </div>
+    <div class="roadmap-grid">
+      <div class="road-phase reveal-init">
+        <div class="kw-num">Step 01</div>
+        <div class="card-title" style="font-size:1.2rem;">Brief Review</div>
+        <p style="font-size:0.88rem;color:var(--ink-2);line-height:1.7;margin-top:0.5rem;">We review your brief within 48 hours and schedule an initial discovery call with the right technical leads.</p>
       </div>
-      <div class="info-block" style="border-left-color:var(--teal-glow);">
-        <div class="info-title">What Happens Next</div>
-        <div class="info-text">
-          <strong>48 Hours:</strong> Initial technical response<br>
-          <strong>1 Week:</strong> Strategy & scope alignment call<br>
-          <strong>2 Weeks:</strong> Integrated fee proposal
-        </div>
+      <div class="road-phase reveal-init">
+        <div class="kw-num">Step 02</div>
+        <div class="card-title" style="font-size:1.2rem;">Technical Scoping</div>
+        <p style="font-size:0.88rem;color:var(--ink-2);line-height:1.7;margin-top:0.5rem;">Our engineers scope the project, identify key technical risks, and recommend the optimal service combination.</p>
+      </div>
+      <div class="road-phase reveal-init">
+        <div class="kw-num">Step 03</div>
+        <div class="card-title" style="font-size:1.2rem;">Proposal</div>
+        <p style="font-size:0.88rem;color:var(--ink-2);line-height:1.7;margin-top:0.5rem;">You receive a transparent fee proposal with milestone deliverables, programme, and team composition — no hidden costs.</p>
+      </div>
+      <div class="road-phase reveal-init">
+        <div class="kw-num">Step 04</div>
+        <div class="card-title" style="font-size:1.2rem;">Mobilisation</div>
+        <p style="font-size:0.88rem;color:var(--ink-2);line-height:1.7;margin-top:0.5rem;">Upon agreement, your dedicated VG team mobilises within 5 working days. Design begins immediately.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section roadmap-section">
-  <div class="section-tag">Strategic Roadmap</div>
-  <h2 class="section-title gold-shimmer-text">Phased Project<br><em>Execution</em></h2>
-  <div class="roadmap-grid">
-    <div class="road-phase">
-      <div class="road-num">1</div>
-      <div class="road-title">Foundation</div>
-      <div class="road-item">Core identity & global strategy</div>
-      <div class="road-item">Technical keyword mapping</div>
-    </div>
-    <div class="road-phase">
-      <div class="road-num">2</div>
-      <div class="road-title">Integrated Design</div>
-      <div class="road-item">A+S+MEPF BIM coordination</div>
-      <div class="road-item">Mobile-responsive architecture</div>
-    </div>
-    <div class="road-phase">
-      <div class="road-num">3</div>
-      <div class="road-title">Authority</div>
-      <div class="road-item">Case study & ROI analysis</div>
-      <div class="road-item">Lead magnet & resource library</div>
-    </div>
-    <div class="road-phase">
-      <div class="road-num">4</div>
-      <div class="road-title">Global Impact</div>
-      <div class="road-item">Multi-language market rollout</div>
-      <div class="road-item">Continuous performance audit</div>
-    </div>
+<!-- VIDEO CTA -->
+<section class="video-hero medium" style="margin:0;">
+  <div class="video-hero-bg">
+    <video autoplay muted loop playsinline>
+      <source src="Public/grok-video-1aac2b0e-0000-4c14-b523-3ff23140ae55.mp4" type="video/mp4">
+    </video>
   </div>
-</section>
-
-<section class="section" style="background:var(--bg-2);">
-  <div class="section-tag">Visual Identity System</div>
-  <h2 class="section-title gold-shimmer-text">The VG Design<br><em>Language</em></h2>
-  <div style="display:flex; gap:2rem; flex-wrap:wrap; margin-top:3rem; justify-content:center;">
-    <div class="swatch"><div class="swatch-color" style="background:#F9F7F2; border:1px solid var(--border);"></div><div class="swatch-name">Warm Alabaster</div></div>
-    <div class="swatch"><div class="swatch-color" style="background:#F4F0E8; border:1px solid var(--border);"></div><div class="swatch-name">Warm Sandstone</div></div>
-    <div class="swatch"><div class="swatch-color" style="background:#B88E45;"></div><div class="swatch-name">Royal Gold</div></div>
-    <div class="swatch"><div class="swatch-color" style="background:#FFFFFF; border:1px solid var(--border);"></div><div class="swatch-name">Premium Mist</div></div>
+  <div class="video-hero-overlay" style="background:rgba(0,0,0,0.45);"></div>
+  <div class="video-hero-content">
+    <div class="eyebrow eyebrow-white">Let's Build</div>
+    <h2 class="display-lg">The right team.<br><em>Right now.</em></h2>
+    <p class="hero-sub" style="margin-bottom:2rem;">Architecture, Structural, MEPF — or all three. Your project. Our expertise. One call.</p>
+    <a href="tel:+6561234567" class="btn btn-gold">Call Singapore Direct</a>
   </div>
 </section>
 

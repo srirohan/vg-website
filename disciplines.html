@@ -7,92 +7,56 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="css/style.css">
 <style>
-/* ─── DISCIPLINE HERO ─── */
-.page-hero {
-  padding: 160px 2rem 100px;
-  background: radial-gradient(circle at top right, #F4F0E8 0%, #F9F7F2 100%);
-  border-bottom: 1px solid var(--border);
-  position:relative; overflow:hidden;
-  text-align: center;
-}
-.page-hero h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.5rem, 6vw, 5.2rem);
-  font-weight: 400; line-height: 1.1; letter-spacing: -0.02em;
-  margin: 1.5rem auto; color: var(--sand);
-  max-width: 1200px;
-}
-.page-hero p {
-  max-width: 800px; margin: 0 auto;
-  color: var(--sand-muted); font-size: 1.15rem; line-height: 1.7;
-}
-
-/* ─── DISCIPLINE SECTIONS ─── */
-.disc-section { padding:8rem 0; border-bottom:1px solid var(--border); }
-.disc-header { display:grid; grid-template-columns:1fr 1.2fr; gap:5rem; margin-bottom:4rem; align-items:start; }
-
-.disc-badge { 
-  display:inline-flex; align-items:center; gap:0.7rem; 
-  padding:0.6rem 1.4rem; background:rgba(201, 160, 90, 0.08); 
-  border:1px solid var(--border); font-family:'Inter',sans-serif; 
-  font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; 
-  color:var(--gold); margin-bottom:2rem; font-weight:600;
-}
-.disc-badge-dot { width:8px; height:8px; border-radius:50%; box-shadow: 0 0 10px currentColor; }
-
-.cap-col { 
-  padding:2.5rem; background:var(--bg-3); border:1px solid var(--border);
-  border-top:3px solid; transition:all 0.3s;
-}
-.cap-col:hover { border-color:var(--gold); transform:translateY(-5px); box-shadow:var(--shadow-lg); }
-.cap-col.blue { border-top-color:var(--teal-glow); }
-.cap-col.gold { border-top-color:var(--gold); }
-.cap-col.teal { border-top-color:var(--teal-glow); }
-.cap-col.coral { border-top-color:#E27A7A; }
-
-.cap-title { font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:500; margin-bottom:1.5rem; color:var(--sand); }
-
-.web-tip { background:var(--bg-3); border-left:3px solid var(--gold); padding:2.5rem; margin-top:3rem; border-radius:2px; box-shadow:var(--shadow-lg); }
-.web-tip-label { font-family:'Inter',sans-serif; font-size:0.62rem; color:var(--gold); letter-spacing:0.18em; text-transform:uppercase; margin-bottom:1rem; }
-.web-tip-text { font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--sand-muted); font-size:1.25rem; line-height:1.6; }
-
+.disc-section { padding: 5rem 0; border-bottom: 1px solid var(--border); }
+.disc-header  { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; margin-bottom: 3rem; align-items: start; }
 @media(max-width:900px){
-  .disc-header,.three-col,.four-col{grid-template-columns:1fr;}
-  .page-hero { padding:120px 1.5rem 60px; }
+  .disc-header { grid-template-columns:1fr; gap:2rem; }
+  .three-col   { grid-template-columns:1fr; }
 }
 </style>
 </head>
 <body>
+<div id="scroll-progress"></div>
 <div id="nav-placeholder"></div>
 
-<div class="page-hero">
-  <div class="page-hero-tag">Our Complete Service Offering</div>
-  <h1 class="gold-shimmer-text">Architecture + Structural + MEPF:<br><em>One Firm, Total Capability</em></h1>
-  <p>Most global projects suffer from fragmented consultants. VG delivers Architecture, Structural Engineering and full MEPF from one integrated team.</p>
-</div>
+<!-- CINEMATIC HERO -->
+<section class="video-hero tall">
+  <div class="video-hero-bg">
+    <video autoplay muted loop playsinline>
+      <source src="Public/grok-video-c23f3ba2-6d90-4def-bf78-c7a36a2bf745.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="video-hero-overlay"></div>
+  <div class="video-hero-content">
+    <div class="eyebrow eyebrow-white">Our Complete Service Offering</div>
+    <h1 class="display-xl">Total <em>Capability.</em></h1>
+    <p class="hero-sub">Architecture + Structural + MEPF from one integrated team — eliminating fragmentation, compressing timelines, protecting your investment.</p>
+  </div>
+</section>
 
 <div id="trust-placeholder"></div>
 
-<section class="section">
-  <!-- ─── ARCHITECTURE ─── -->
+<div class="section">
+
+  <!-- ARCHITECTURE -->
   <div class="disc-section" id="architecture">
-    <div class="disc-badge"><div class="disc-badge-dot" style="background:var(--teal-glow);"></div>Discipline 01 · Architecture</div>
+    <div class="disc-badge">Discipline 01 · Architecture</div>
     <div class="disc-header">
-      <div>
-        <h2 class="section-title gold-shimmer-text" style="font-size:clamp(2rem,3vw,3.5rem); text-align:left;">Where Vision Becomes <em>Reality</em></h2>
-        <p class="body-text" style="margin-top:1.5rem; color:var(--sand-muted);">VG's architects blend aesthetic ambition with engineering rigour — designing buildings that perform technically, comply globally and endure over decades.</p>
-        <ul class="check-list" style="margin-top:2rem;">
-          <li>Architectural concept & schematic design</li>
-          <li>Design development & detailed drawings</li>
+      <div class="reveal-init">
+        <h2 class="sec-title" style="font-size:clamp(2rem,3vw,3.2rem); margin-bottom:1.5rem;">Where vision becomes <em>reality.</em></h2>
+        <p class="body-text" style="margin-bottom:2rem;">VG's architects blend aesthetic ambition with engineering rigour — designing buildings that perform technically and express architecturally.</p>
+        <ul class="check-list">
+          <li>Architectural concept &amp; schematic design</li>
+          <li>Design development &amp; detailed drawings</li>
           <li>BIM modelling (Revit / ArchiCAD / IFC)</li>
-          <li>Facade, envelope & materiality design</li>
-          <li>Interior architecture & space planning</li>
-          <li>Master planning & site analysis</li>
+          <li>Facade, envelope &amp; materiality design</li>
+          <li>Interior architecture &amp; space planning</li>
+          <li>Master planning &amp; site analysis</li>
         </ul>
       </div>
-      <div>
-        <div class="card-top blue" style="padding:2.5rem; background:var(--bg-3); border:1px solid var(--border); border-top:3px solid var(--teal-glow); margin-bottom:2rem;">
-          <div style="font-family:'Inter',sans-serif;font-size:0.65rem;color:var(--teal-glow);letter-spacing:0.15em;margin-bottom:1rem;font-weight:600;">GLOBAL STANDARDS FLUENCY</div>
+      <div class="reveal-init">
+        <div class="card-top" style="margin-bottom:1.5rem;">
+          <div class="cap-title">Global Standards Fluency</div>
           <ul class="arrow-list">
             <li>NBC (India) · UBC (US)</li>
             <li>Eurocode · Singapore BCA</li>
@@ -100,9 +64,9 @@
             <li>IBC · AS/NZS standards</li>
           </ul>
         </div>
-        <div class="card-top gold" style="padding:2.5rem; background:var(--bg-3); border:1px solid var(--border); border-top:3px solid var(--gold);">
-          <div style="font-family:'Inter',sans-serif;font-size:0.65rem;color:var(--gold);letter-spacing:0.15em;margin-bottom:1rem;font-weight:600;">INTEGRATED DESIGN ADVANTAGE</div>
-          <p style="font-size:0.9rem;color:var(--sand-muted);line-height:1.7;">Architecture in the same team as Structural and MEPF saves time and cost — reducing coordination RFIs by up to 60%.</p>
+        <div class="card-top">
+          <div class="cap-title">Integrated Design Advantage</div>
+          <p style="font-size:0.9rem;color:var(--ink-2);line-height:1.7;">Architecture in the same team as Structural and MEPF saves time and cost — reducing coordination RFIs by up to 60%.</p>
         </div>
       </div>
     </div>
@@ -112,108 +76,95 @@
     </div>
   </div>
 
-  <!-- ─── STRUCTURAL ─── -->
+  <!-- STRUCTURAL -->
   <div class="disc-section" id="structural">
-    <div class="disc-badge"><div class="disc-badge-dot" style="background:var(--gold);"></div>Discipline 02 · Structural Engineering</div>
-    <h2 class="section-title gold-shimmer-text" style="font-size:clamp(2rem,3vw,3.5rem); margin-bottom:3rem; text-align:left;">The Backbone of Every <em>Great Building</em></h2>
-    <div class="three-col" style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem;">
-      <div class="cap-col blue">
+    <div class="disc-badge"><div class="disc-badge-dot"></div>Discipline 02 · Structural Engineering</div>
+    <h2 class="sec-title reveal-init" style="font-size:clamp(2rem,3vw,3.2rem); margin-bottom:2.5rem;">The backbone of every <em>great building.</em></h2>
+    <div class="three-col">
+      <div class="cap-col reveal-init">
         <div class="cap-title">Design Capabilities</div>
         <ul class="arrow-list">
           <li>Reinforced concrete design</li>
           <li>Structural steel design</li>
-          <li>Timber & mass timber structures</li>
-          <li>Foundation & geotech</li>
-          <li>Seismic & wind load analysis</li>
+          <li>Timber &amp; mass timber structures</li>
+          <li>Foundation &amp; geotech</li>
+          <li>Seismic &amp; wind load analysis</li>
         </ul>
       </div>
-      <div class="cap-col gold">
+      <div class="cap-col reveal-init">
         <div class="cap-title">Advanced Engineering</div>
         <ul class="arrow-list">
           <li>FEA Analysis</li>
-          <li>Dynamic and vibration analysis</li>
-          <li>Peer review & independent checking</li>
-          <li>Value engineering</li>
-          <li>Lifecycle assessment</li>
+          <li>Dynamic &amp; vibration analysis</li>
+          <li>Progressive collapse assessment</li>
+          <li>Blast &amp; impact resistance</li>
+          <li>Post-tensioned slab design</li>
         </ul>
       </div>
-      <div class="cap-col teal">
-        <div class="cap-title">Global Code Fluency</div>
+      <div class="cap-col reveal-init">
+        <div class="cap-title">Specialist Sectors</div>
         <ul class="arrow-list">
-          <li>Eurocodes (Europe/GCC)</li>
-          <li>IS Codes (India)</li>
-          <li>ACI / AISC (North America)</li>
-          <li>AS/NZS (Australia)</li>
-          <li>BCA (Singapore)</li>
+          <li>Data centre floor loading (20 kN/m²)</li>
+          <li>Cold store heavy-haul slabs</li>
+          <li>Elevated reservoirs &amp; tanks</li>
+          <li>Podium &amp; transfer structures</li>
+          <li>Seismic isolation systems</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <!-- ─── MEPF ─── -->
+  <!-- MEPF -->
   <div class="disc-section" id="mepf">
-    <div class="disc-badge"><div class="disc-badge-dot" style="background:var(--teal-glow);"></div>Discipline 03 · MEPF Engineering</div>
-    <h2 class="section-title gold-shimmer-text" style="font-size:clamp(2rem,3vw,3.5rem); margin-bottom:3rem; text-align:left;">Mechanical · Electrical · Plumbing · <em>Fire Fighting</em></h2>
-    <div class="four-col" style="display:grid; grid-template-columns:repeat(4,1fr); gap:1rem;">
-      <div class="cap-col blue">
-        <div class="cap-title">Mechanical</div>
-        <ul class="arrow-list">
-          <li>HVAC Systems</li>
-          <li>District Cooling</li>
-          <li>Thermal Energy Storage</li>
+    <div class="disc-badge"><div class="disc-badge-dot"></div>Discipline 03 · MEPF Engineering</div>
+    <div class="disc-header">
+      <div class="reveal-init">
+        <h2 class="sec-title" style="font-size:clamp(2rem,3vw,3.2rem); margin-bottom:1.5rem;">The systems that make<br>buildings <em>perform.</em></h2>
+        <p class="body-text" style="margin-bottom:2rem;">VG's MEPF engineers design the mechanical, electrical, plumbing and fire systems that underpin every net zero and mission-critical project we deliver.</p>
+        <ul class="check-list">
+          <li>HVAC &amp; ventilation engineering</li>
+          <li>Electrical HV/LV design &amp; load scheduling</li>
+          <li>Plumbing, drainage &amp; hydraulics</li>
+          <li>Fire suppression &amp; detection systems</li>
+          <li>Lighting design &amp; controls</li>
+          <li>BMS &amp; building controls</li>
+          <li>Photovoltaic &amp; energy storage integration</li>
         </ul>
       </div>
-      <div class="cap-col gold">
-        <div class="cap-title">Electrical</div>
-        <ul class="arrow-list">
-          <li>HV/LV Power</li>
-          <li>Lighting & Automation</li>
-          <li>Renewable Integration</li>
-        </ul>
+      <div class="reveal-init">
+        <div class="four-col" style="grid-template-columns:1fr 1fr; gap:1rem;">
+          <div class="cap-box"><div class="cap-box-title">Mechanical</div><p class="cap-box-text">Central chilled water, VRF/VRV, precision cooling, clean rooms.</p></div>
+          <div class="cap-box"><div class="cap-box-title">Electrical</div><p class="cap-box-text">HV/LV networks, standby generation, UPS, power quality.</p></div>
+          <div class="cap-box"><div class="cap-box-title">Plumbing</div><p class="cap-box-text">Domestic water, drainage, rainwater harvesting, grey-water reuse.</p></div>
+          <div class="cap-box"><div class="cap-box-title">Fire</div><p class="cap-box-text">Sprinkler, suppression, FM200/NOVEC, early warning detection.</p></div>
+        </div>
+        <div class="web-tip" style="margin-top:1.5rem;">
+          <div class="web-tip-label">📊 Software</div>
+          <div class="web-tip-text">IES VE · EnergyPlus · AutoCAD MEP · Revit MEP · Design Builder · DIALux</div>
+        </div>
       </div>
-      <div class="cap-col teal">
-        <div class="cap-title">Plumbing</div>
-        <ul class="arrow-list">
-          <li>Water Supply</li>
-          <li>Drainage Systems</li>
-          <li>Water Treatment</li>
-        </ul>
-      </div>
-      <div class="cap-col coral">
-        <div class="cap-title">Fire Fighting</div>
-        <ul class="arrow-list">
-          <li>Sprinkler Design</li>
-          <li>Detection & Alarm</li>
-          <li>Smoke Control</li>
-        </ul>
-      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- VIDEO BREAK -->
+<section class="video-hero medium" style="margin:0;">
+  <div class="video-hero-bg">
+    <video autoplay muted loop playsinline>
+      <source src="Public/grok-video-a93527ab-5ca3-4bed-82b3-470a1e8af33f.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="video-hero-overlay" style="background:rgba(0,0,0,0.4);"></div>
+  <div class="video-hero-content">
+    <div class="eyebrow eyebrow-white">Three Disciplines · One Team</div>
+    <h2 class="display-lg">No silos.<br><em>No excuses.</em></h2>
+    <div class="btn-row center" style="margin-top:2rem;">
+      <a href="contact.html" class="btn btn-gold">Start a Brief</a>
+      <a href="projects.html" class="btn btn-outline-white">See Projects</a>
     </div>
   </div>
 </section>
-
-<!-- PROOF STATS -->
-<div class="stats-strip" style="grid-template-columns:repeat(3,1fr); background:#0A1618; border-top:1px solid var(--border); padding:4rem 2rem;">
-  <div class="stat-box" style="text-align:center;">
-    <div class="stat-big gold-shimmer-text" style="font-size:3rem; font-family:'Cormorant Garamond',serif;">ISO 19650</div>
-    <div class="stat-label" style="color:var(--sand-muted); text-transform:uppercase; font-size:0.7rem; letter-spacing:0.1em; margin-top:0.5rem;">Compliant BIM workflow</div>
-  </div>
-  <div class="stat-box" style="text-align:center;">
-    <div class="stat-big gold-shimmer-text" style="font-size:3rem; font-family:'Cormorant Garamond',serif;">Single Team</div>
-    <div class="stat-label" style="color:var(--sand-muted); text-transform:uppercase; font-size:0.7rem; letter-spacing:0.1em; margin-top:0.5rem;">One coordination model</div>
-  </div>
-  <div class="stat-box" style="text-align:center;">
-    <div class="stat-big gold-shimmer-text" style="font-size:3rem; font-family:'Cormorant Garamond',serif;">Global</div>
-    <div class="stat-label" style="color:var(--sand-muted); text-transform:uppercase; font-size:0.7rem; letter-spacing:0.1em; margin-top:0.5rem;">Delivery across 6 regions</div>
-  </div>
-</div>
-
-<div class="cta-band" style="background:linear-gradient(rgba(5,12,13,0.9),rgba(5,12,13,0.9)), url('Public/pattern.png'); background-size:cover; padding:8rem 2rem;">
-  <h2 class="gold-shimmer-text" style="font-size:clamp(2rem,4vw,3.5rem); margin-bottom:2rem;">Need All Three Disciplines<br><em style="color:var(--sand);">Under One Roof?</em></h2>
-  <div class="btn-group" style="justify-content:center; margin-top:3rem;">
-    <a href="contact.html" class="btn btn-gold">Request a Consultation</a>
-    <a href="specialisms.html" class="btn btn-outline" style="border-color:var(--border); color:var(--sand);">View Specialisms</a>
-  </div>
-</div>
 
 <div id="footer-placeholder"></div>
 <script src="js/shared.js"></script>
